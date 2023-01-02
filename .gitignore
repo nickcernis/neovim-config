@@ -1,0 +1,7 @@
+plugin/
+plugged/
+session/
+tmp/
+keys/
+.netrwhist
+.luarc.json

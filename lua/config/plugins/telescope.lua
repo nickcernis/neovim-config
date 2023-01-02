@@ -1,0 +1,103 @@
+-- I'm using fzf instead of Telescope at the moment. See ./fzf.lua.
+-- Preserving this to show the equivalent Telescope config.
+return {}
+
+-- return {
+-- 	-- fzf but in c
+-- 	-- Brings fast fuzzy search to telescope.
+-- 	-- `apple` will match 'apps with elephants'.
+-- 	-- `'apple` does an exact match.
+-- 	--
+-- 	-- Be sure to do :checkhealth telescope to confirm that the fzf extension is active.
+-- 	-- You should see 'Telescope Extension: `fzf`' in the output.
+-- 	--
+-- 	-- If not, run :Lazy, press D to see the path to telescope-fzf-native.nvim, cd to
+-- 	-- that directory, and run `make clean && make`. Restart nvim and all should be well.
+-- 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+--
+-- 	-- Telescope for searching all the things.
+-- 	-- https://github.com/nvim-telescope/telescope.nvim
+-- 	{
+-- 		"nvim-telescope/telescope.nvim",
+-- 		branch = "0.1.x",
+-- 		--tag = '0.1.0', // less update churn but fewer new fixes/features.
+-- 		dependencies = {
+-- 			"nvim-lua/plenary.nvim",
+-- 			"nvim-tree/nvim-web-devicons",
+-- 			"nvim-treesitter/nvim-treesitter",
+-- 			-- 'nvim-telescope/telescope-fzf-native.nvim',
+-- 		},
+-- 		config = function()
+-- 			-- Config largely inspired by https://github.com/NvChad/NvChad/blob/main/lua/plugins/configs/telescope.lua.
+-- 			local actions = require("telescope.actions")
+-- 			require("telescope").setup({
+-- 				defaults = {
+-- 					layout_config = {
+-- 						horizontal = {
+-- 							-- Prompt at the top where it belongs.
+-- 							prompt_position = "top",
+-- 							preview_width = 0.55,
+-- 							results_width = 0.8,
+-- 						},
+-- 						vertical = {
+-- 							mirror = false,
+-- 						},
+-- 						width = 0.87,
+-- 						height = 0.80,
+-- 						preview_cutoff = 120,
+-- 					},
+-- 					-- Put results top to bottom instead of bottom to top.
+-- 					sorting_strategy = "ascending",
+-- 					path_display = { "truncate" },
+-- 					mappings = {
+-- 						i = {
+-- 							-- One escape closes telescope instead of two.
+-- 							["<esc>"] = actions.close,
+--
+-- 						},
+-- 					},
+-- 				},
+-- 				pickers = {
+-- 					buffers = {
+-- 						mappings = {
+-- 							i = {
+-- 								-- Close buffers from the buffer list with ctrl-d.
+-- 								["<c-d>"] = actions.delete_buffer,
+--
+-- 							},
+-- 						},
+-- 					},
+-- 				},
+-- 			})
+--
+-- 			require("telescope").load_extension("fzf")
+--
+-- 			-- Bindings.
+-- 			local telescope_builtin = require("telescope.builtin")
+-- 			vim.keymap.set("n", "<leader>bb", telescope_builtin.buffers, { desc = "find buffers", silent = true, noremap = true })
+-- 			vim.keymap.set("n", "<c-b>", telescope_builtin.buffers, { desc = "find buffers", silent = true, noremap = true })
+-- 			vim.keymap.set("n", "<c-p>", telescope_builtin.find_files, { desc = "files", silent = true, noremap = true })
+-- 			vim.keymap.set("n", "<c-g>", telescope_builtin.live_grep, { desc = "grep", silent = true, noremap = true })
+-- 			vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "files", silent = true, noremap = true })
+-- 			vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "grep" })
+-- 			vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "buffers" })
+-- 			vim.keymap.set(
+-- 				"n",
+-- 				"<c-l>",
+-- 				telescope_builtin.current_buffer_fuzzy_find,
+-- 				{ desc = "find line", silent = true, noremap = true }
+-- 			)
+-- 		end
+-- 	},
+--
+--
+-- 	-- Ctrl-h to view undo [h]istory, Ctrl-n/p to browse up and down, Ctrl-CR to revert to selected history.
+-- 	{
+-- 		"debugloop/telescope-undo.nvim",
+-- 		dependencies = { "nvim-telescope/telescope.nvim" },
+-- 		config = function()
+-- 			require("telescope").load_extension("undo")
+-- 			vim.keymap.set("n", "<c-h>", "<cmd>Telescope undo<cr>")
+-- 		end,
+-- 	},
+-- }
