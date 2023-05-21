@@ -260,7 +260,7 @@ return {
         -- Install servers by default.
         -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
         ensure_installed = {
-          "sumneko_lua",
+          "lua_ls",
           "rust_analyzer",
           "tsserver",
         },
