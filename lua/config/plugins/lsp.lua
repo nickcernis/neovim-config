@@ -337,7 +337,7 @@ return {
       require("mason-null-ls").setup({
         -- Available tools: https://github.com/jay-babu/mason-null-ls.nvim#available-null-ls-sources
         -- TODO: configure eslint_d and prettierd if needed.
-        ensure_installed = { "stylua", "eslint", "prettier_d" },
+        ensure_installed = { "stylua", "eslint_d", "prettierd" },
       })
 
       require("mason-null-ls").setup_handlers({
