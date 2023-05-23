@@ -8,7 +8,7 @@ Assumes macOS.
 
 ```sh
 brew tap homebrew/cask-fonts
-brew install neovim ripgrep fzf bat git-delta gnu-sed fd lazygit font-fira-code-nerd-font
+brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit font-fira-code-nerd-font
 ```
 
 Then:
