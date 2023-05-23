@@ -4,7 +4,7 @@ My personal Neovim config, Lua-only, from scratch.
 
 ## Setup
 
-Assumes macOS.
+Assumes macOS and Neovim 0.9+.
 
 ```sh
 brew tap homebrew/cask-fonts
