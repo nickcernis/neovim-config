@@ -264,6 +264,7 @@ return {
           "lua_ls",
           "rust_analyzer",
           "tsserver",
+          "zls",
         },
         automatic_installation = true,
       })
