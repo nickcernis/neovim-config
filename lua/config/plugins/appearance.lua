@@ -6,7 +6,12 @@ return {
     priority = 1000, -- Load before other start plugins.
     config = function()
       require("gruvbox").setup({
-        italic = false,
+        italic = {
+          strings = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
         bold = false,
         contrast = "hard",
       })
