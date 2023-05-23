@@ -218,7 +218,7 @@ return {
           vim.keymap.set(
             "x",
             "<F4>",
-            vim.lsp.buf.range_code_action,
+            vim.lsp.buf.code_action,
             { buffer = args.buf }
           )
         end,
