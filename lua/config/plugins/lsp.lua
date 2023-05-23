@@ -261,6 +261,7 @@ return {
         -- Install servers by default.
         -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
         ensure_installed = {
+          "clangd",
           "lua_ls",
           "rust_analyzer",
           "tsserver",
