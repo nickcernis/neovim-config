@@ -135,7 +135,8 @@ return {
     -- mess into something approximating a coherent LSP featureset.
     config = function()
       -- Adjust Lua language server settings for this Neovim workspace.
-      require("neodev").setup()
+      -- TODO: Disabled for now; seems to freeze nvim for this project with runaway processes.
+      -- require("neodev").setup()
 
       -- Configure keybindings only when a language server “attaches”
       -- to the buffer, and only if that language server supports the
