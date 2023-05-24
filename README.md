@@ -44,6 +44,7 @@ git clone https://github.com/nickcernis/neovim-config nvim
 - `Ctrl-f` to find lines in current file (similar to swiper in Emacs).
 - `Ctrl-g` to search text in current project (backed by ripgrep).
 - `Ctrl-e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
+- `Ctrl-l` for the project switcher.
 - `Ctrl-b` for buffer list, then Ctrl-x to close buffer.
 - `Ctrl-s` for git status, left to stage, right to unstage.
 - `Ctrl-j` for word jump targets.

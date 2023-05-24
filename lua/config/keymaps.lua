@@ -115,6 +115,13 @@ set(
   { silent = true, noremap = true }
 )
 
+
+set(
+  "n",
+  '<c-l>',
+  '<cmd>lua require("config.fzf-projects").projects()<CR>'
+)
+
 -- Quit but save all changed buffers.
 set(
   "n",
