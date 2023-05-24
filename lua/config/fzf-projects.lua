@@ -36,7 +36,7 @@ M.projects = function(opts)
     end
 
     fzf_lua.fzf_exec(
-        'fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth 5 --exclude node_modules --exclude Library --exclude ".github" --exclude ".gitkraken" --exclude ".gitlibs" --exclude ".wp-env" --exclude ".doom.d" --exclude ".cargo" /.git | sort',
+        'fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth 5 --exclude .Trash --exclude node_modules --exclude Library --exclude ".github" --exclude ".gitkraken" --exclude ".gitlibs" --exclude ".wp-env" --exclude ".doom.d" --exclude ".cargo" /.git | sort',
         opts
     )
 end
