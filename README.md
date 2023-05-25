@@ -102,11 +102,10 @@ Things to explore:
 
 ### Git
 
-- GH CLI integration via FzfLua.
-- Open line on GitHub.
 - Explore https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
 
 ### Formatting
+
 - Format pasted code when it's pasted. https://github.com/ConradIrwin/vim-bracketed-paste
 
 ### Misc
