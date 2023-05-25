@@ -12,7 +12,8 @@ vim.g.mapleader = " "
 -- vim.o.cmdheight = 0
 
 -- Don't soft wrap long lines.
-vim.wo.wrap = false
+-- vim.wo.wrap = false
+-- This is now set dynamically by the textwrap plugin.
 
 -- Permanently show sign column instead of only when signs are active.
 -- Stops redraw/layout shift due to sudden appearance of signs.
