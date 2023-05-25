@@ -135,3 +135,22 @@ set(
   "<cmd>wqall<cr>",
   { silent = true, noremap = true, desc = "quit all" }
 )
+
+set(
+  "n",
+  "<leader>tt",
+  ":lua KeymapFunctions.spawn_kitty_tab()<cr><cr>",
+  { silent = true, noremap = true, desc = "new kitty tab" }
+)
+
+KeymapFunctions = {}
+
+-- Spawns a new kitty terminal tab in the current Neovim working directory.
+-- Expects the following in kitty.conf:
+-- allow_remote_control yes
+-- listen_on unix:/tmp/mykitty
+function KeymapFunctions.spawn_kitty_tab()
+  local cwd = vim.fn.getcwd()
+  local command = string.format("!kitty @ launch --type=tab --cwd='%s'", cwd)
+  vim.cmd(command)
+end

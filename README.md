@@ -68,6 +68,10 @@ I use these in normal mode in place of the default Ctrl-w window commands, since
 - <space> w d|x to close the window.
 - <space> b d|x to close the buffer.
 
+### Additional leader key bindings
+
+- <space> t t to spawn a new Kitty tab using Neovim's current working directory.
+
 ### LSP
 
 - `K` to show LSP hints.
