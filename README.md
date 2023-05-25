@@ -109,27 +109,6 @@ Things to explore:
 ### Formatting
 - Format pasted code when it's pasted. https://github.com/ConradIrwin/vim-bracketed-paste
 
-### Projects/sessions
-
-Plugin or custom command to:
-
-1. Show a picker with a list of candidate working directories.
-2. Close all current buffers.
-3. cd to the new dir.
-4. Run :FzfLua files.
-
-Candidates:
-
-- Custom FzfLua plugin based on https://github.com/ibhagwan/fzf-lua/wiki/Advanced#example-directory-switcher and https://github.com/ibhagwan/fzf-lua/issues/461 and https://github.com/ibhagwan/fzf-lua/issues/194#issuecomment-950321120.
-- https://github.com/cljoly/telescope-repo.nvim with https://github.com/notjedi/nvim-rooter.lua.
-- Zoxide with https://github.com/jvgrootveld/telescope-zoxide
-
-Or a dedicated session plugin:
-
-https://github.com/nyngwang/suave.lua
-https://github.com/nyngwang/fzf-lua-projections.nvim
-https://github.com/EricDriussi/remember-me.nvim
-
 ### Misc
 
 - Try this theme: https://github.com/jesseleite/nvim-noirbuddy
