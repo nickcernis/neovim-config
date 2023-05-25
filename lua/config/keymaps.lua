@@ -118,7 +118,7 @@ set(
 
 set(
   "n",
-  '<c-l>',
+  "<c-l>",
   '<cmd>lua require("config.fzf-projects").projects()<CR>'
 )
 
