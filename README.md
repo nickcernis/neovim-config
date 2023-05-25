@@ -60,17 +60,18 @@ git clone https://github.com/nickcernis/neovim-config nvim
 
 I use these in normal mode in place of the default Ctrl-w window commands, since I map Ctrl-w to close buffer:
 
-- <space> w v to split vertically.
-- <space> w s to split horizontally.
-- <space> w h to move cursor left.
-- <space> w l to move cursor right.
-- <space> w r to rotate buffers between window.
-- <space> w d|x to close the window.
-- <space> b d|x to close the buffer.
+- `<space> w v` to split vertically.
+- `<space> w s` to split horizontally.
+- `<space> w h` to move cursor left.
+- `<space> w l` to move cursor right.
+- `<space> w r` to rotate buffers between window.
+- `<space> w d|x` to close the window.
+- `<space> b d|x` to close the buffer.
 
 ### Additional leader key bindings
 
-- <space> t t to spawn a new Kitty tab using Neovim's current working directory.
+- `<space> t t` to spawn a new Kitty tab using Neovim's current working directory.
+- `<space> g h` to display a GitHub CLI UI.
 
 ### LSP
 
