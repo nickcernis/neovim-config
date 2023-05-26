@@ -109,12 +109,12 @@ return {
       -- https://github.com/topics/nvim-cmp
       "hrsh7th/cmp-nvim-lsp", -- Use LSP server for completions.
       -- "hrsh7th/cmp-buffer", -- Use strings from current buffer.
-      "hrsh7th/cmp-path", -- Complete file paths for current project.
+      "hrsh7th/cmp-path",     -- Complete file paths for current project.
       "hrsh7th/cmp-nvim-lua", -- Complete Neovim's Lua API.
 
       -- Snippets
-      "L3MON4D3/LuaSnip", -- Snippet plugin.
-      "saadparwaiz1/cmp_luasnip", -- See snippets in completion list.
+      "L3MON4D3/LuaSnip",             -- Snippet plugin.
+      "saadparwaiz1/cmp_luasnip",     -- See snippets in completion list.
       "rafamadriz/friendly-snippets", -- Large snippet library.
 
       -- Fidget adds LSP status and logging above the status line for
@@ -157,8 +157,8 @@ return {
                 -- Useful if we want to defer to an external tool via null-ls.
                 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
                 if
-                  client_.name == "tsserver"
-                  or client_.name == "lua-language-server"
+                    client_.name == "tsserver"
+                    or client_.name == "lua-language-server"
                 then
                   return false
                 else
