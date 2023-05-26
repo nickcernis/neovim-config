@@ -101,6 +101,9 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 
 Things to explore:
 
+- https://github.com/folke/tokyonight.nvim
+- https://github.com/folke/zen-mode.nvim
+
 ### Git
 
 - Explore https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
