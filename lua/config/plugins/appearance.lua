@@ -1,4 +1,25 @@
 return {
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = false },
+          keywords = { italic = false },
+        },
+        on_colors = function(colors)
+          colors.comment = "#747fb3" -- Original about "#575f86".
+        end
+      })
+      vim.cmd("colorscheme tokyonight-night")
+    end,
+  },
+
   -- Gruvbox: the best theme if you like brown.
   -- {
   --   "ellisonleao/gruvbox.nvim",
@@ -22,27 +43,6 @@ return {
   --     vim.cmd([[highlight ColorColumn guibg=#242729]])
   --   end,
   -- },
-
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("tokyonight").setup({
-        styles = {
-          -- Style to be applied to different syntax groups
-          -- Value is any valid attr-list value for `:help nvim_set_hl`
-          comments = { italic = false },
-          keywords = { italic = false },
-        },
-        on_colors = function(colors)
-          colors.comment = "#747fb3" -- Original about "#575f86".
-        end
-      })
-      vim.cmd("colorscheme tokyonight-night")
-    end,
-  },
 
   -- Adds indentation guides.
   -- https://github.com/lukas-reineke/indent-blankline.nvim
