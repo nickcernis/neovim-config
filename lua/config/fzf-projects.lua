@@ -30,13 +30,14 @@ M.projects = function(opts)
         local home_path = os.getenv("HOME") or ""
         local short_path = string.gsub(project_path, home_path, "~")
         short_path = string.gsub(short_path, "/.git", "")
+        short_path = string.gsub(short_path, "%d+%s*~", "~")
         local _, _, git_dir_name = string.find(project_path, "/([^/]+)/%.git")
 
         return  git_dir_name .. " " .. require 'fzf-lua'.utils.ansi_codes.magenta(short_path)
     end
 
     fzf_lua.fzf_exec(
-        'fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth 5 --exclude /Dropbox --exclude .emacs.d --exclude kitty-themes --exclude .Trash --exclude node_modules --exclude Library --exclude ".github" --exclude ".gitkraken" --exclude ".gitlibs" --exclude ".wp-env" --exclude ".doom.d" --exclude ".cargo" /.git | sort',
+        'fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth 5 --exclude /Dropbox --exclude .emacs.d --exclude kitty-themes --exclude .Trash --exclude node_modules --exclude Library --exclude ".github" --exclude ".gitkraken" --exclude ".gitlibs" --exclude ".wp-env" --exclude ".doom.d" --exclude ".cargo" /.git --exec stat -f "%m%t%N" | sort -nr',
         opts
     )
 end
