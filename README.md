@@ -101,11 +101,9 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 
 Things to explore:
 
-- https://github.com/folke/zen-mode.nvim
-
 ### Git
 
-- Explore https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
+- https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
 
 ### Formatting
 
@@ -118,8 +116,8 @@ Things to explore:
 - Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html
 - Snippets. Learn a few from rafamadriz/friendly-snippets, which is already part of the LSP setup.
 - Check how file handling works if open buffers are deleted outside of nvim, such as when when switching git branch.
-- Explore writing modes, perhaps https://github.com/Pocco81/true-zen.nvim.
-- Look at neural and similar? https://github.com/dense-analysis/neural or https://github.com/zbirenbaum/copilot.lua
+- Explore writing modes, perhaps https://github.com/Pocco81/true-zen.nvim or https://github.com/folke/zen-mode.nvim.
+- Look at neural and similar? https://github.com/dense-analysis/neural or https://github.com/zbirenbaum/copilot.lua or https://github.com/Bryley/neoai.nvim
 - Task runner for cargo run etc. with jump-to-line for compiler errors, via quickfix lists or other.
 - Play with replacer: https://github.com/gabrielpoca/replacer.nvim
 - Try tabout: https://github.com/abecodes/tabout.nvim
@@ -130,7 +128,7 @@ Things to explore:
 
 ### Terminal
 
-I use iTerm panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me in both iTerm and Kitty.)
+I use Kitty panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me in both iTerm and Kitty.)
 
 ### Git
 
