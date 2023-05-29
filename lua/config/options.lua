@@ -65,7 +65,7 @@ vim.opt.expandtab = true
 vim.wo.number = true -- line numbers by default
 vim.o.updatetime = 250 -- default 4000
 vim.opt.shortmess:append("I") -- hide startup message
-vim.opt.clipboard:append("unnamed")
+vim.opt.clipboard:append("unnamedplus")
 vim.o.timeoutlen = 200 -- default 1000, reduced here to show which key earlier
 
 -- Improve the completion experience.
