@@ -72,6 +72,8 @@ I use these in normal mode in place of the default Ctrl-w window commands, since
 
 - `<space> t t` to spawn a new Kitty tab using Neovim's current working directory.
 - `<space> g h` to display a GitHub CLI UI.
+- `<space> h p` to preview a git hunk.
+- `<space> h r` to reset a git hunk.
 
 ### LSP
 
