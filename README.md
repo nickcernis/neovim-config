@@ -80,6 +80,7 @@ I use these in normal mode in place of the default Ctrl-w window commands, since
 - `K` to show LSP hints.
 - `gl` to show LSP issues.
 - `gd` to go to definition and Ctrl-o to return.
+- `gr` to show references and :q to exit.
 - `F2` to rename current cursor position.
 - `F4` for code actions on the current cursor position.
 - `Ctrl-;` to format the current buffer or selection if the LSP server provides formatting support.
