@@ -160,7 +160,7 @@ return {
                     client_.name == "tsserver"
                     or client_.name == "lua-language-server"
                 then
-                  return false
+                  return client_.name == "null-ls"
                 else
                   return true
                 end
@@ -341,12 +341,10 @@ return {
 
       require("mason-null-ls").setup({
         -- Available tools: https://github.com/jay-babu/mason-null-ls.nvim#available-null-ls-sources
-        -- TODO: configure eslint_d and prettierd if needed.
         ensure_installed = { "stylua", "eslint_d", "prettierd" },
-      })
-
-      require("mason-null-ls").setup({
         automatic_setup = true,
+        automatic_installation = true,
+        handlers = {},
       })
 
       -- Set up installed and configured sources above.
