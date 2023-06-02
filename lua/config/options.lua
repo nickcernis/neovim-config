@@ -56,6 +56,7 @@ vim.opt.listchars:append("precedes:⟨")
 vim.opt.listchars:append("nbsp:␣")
 
 -- Alter tab widths.
+-- These values may be overridden by guess-indent.
 vim.opt.tabstop = 4 -- default 8
 vim.opt.softtabstop = 4 -- default 0
 vim.opt.shiftwidth = 4

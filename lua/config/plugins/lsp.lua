@@ -167,6 +167,7 @@ return {
               end,
               bufnr = bufnr,
             })
+            vim.cmd("silent GuessIndent") -- Re-run in case default indent size changed during formatting.
           end
 
           -- <Ctrl-;> to format.
