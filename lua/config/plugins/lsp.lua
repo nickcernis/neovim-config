@@ -158,7 +158,7 @@ return {
                 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
                 if
                     client_.name == "tsserver"
-                    or client_.name == "lua-language-server"
+                    or client_.name == "lua_ls"
                 then
                   return client_.name == "null-ls"
                 else
