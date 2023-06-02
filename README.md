@@ -24,6 +24,7 @@ git clone https://github.com/nickcernis/neovim-config nvim
 ├── README.md                 -> You are here.
 ├── init.lua                  -> ASCII art and includes.
 ├── lazy-lock.json            -> Plugin lockfile updated by Lazy.
+├── local-plugins/            -> Personal plugins not yet released publicly.
 └── lua
     └── config
         ├── autocommands.lua  -> Auto-strip whitespace, file picker on load.

@@ -1,5 +1,5 @@
 -- GitHub CLI UI using fzf.lua
--- Bound to <space>gh in keymaps.lua.
+-- Bound to <space>gh in local.lua.
 -- Expects GitHub CLI to be installed.
 
 local fzf_status_ok, fzf_lua = pcall(require, "fzf-lua")

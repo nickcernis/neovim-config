@@ -115,20 +115,6 @@ set(
   { silent = true, noremap = true }
 )
 
--- Project picker.
-set(
-  "n",
-  "<c-l>",
-  '<cmd>lua require("config.fzf-projects").projects()<CR>'
-)
-
--- GitHub picker.
-set(
-  "n",
-  "<leader>gh",
-  '<cmd>lua require("config.fzf-github").githubcli()<CR>'
-)
-
 -- Quit but save all changed buffers.
 set(
   "n",
