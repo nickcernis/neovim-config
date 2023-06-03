@@ -153,8 +153,8 @@ return {
           local lsp_format = function(bufnr)
             vim.lsp.buf.format({
               filter = function(client_)
-                -- Prevent certain LSP servers from formatting.
-                -- Useful if we want to defer to an external tool via null-ls.
+                -- Prevent certain LSP servers from formatting, deferring to an
+                -- external formatter via null-ls.
                 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
                 if client_.name == "tsserver" or client_.name == "lua_ls" then
                   return client_.name == "null-ls"
