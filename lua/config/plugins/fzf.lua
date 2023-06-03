@@ -13,7 +13,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local fzf_lua = require("fzf-lua")
-      fzf_lua.setup({"fzf-native"}) -- Use bat for previews. https://github.com/ibhagwan/fzf-lua#profiles
+      fzf_lua.setup({ "fzf-native" }) -- Use bat for previews. https://github.com/ibhagwan/fzf-lua#profiles
 
       vim.keymap.set(
         "n",

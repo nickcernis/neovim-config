@@ -14,7 +14,7 @@ return {
         },
         on_colors = function(colors)
           colors.comment = "#747fb3" -- Original about "#575f86".
-        end
+        end,
       })
       vim.cmd("colorscheme tokyonight-night")
     end,
