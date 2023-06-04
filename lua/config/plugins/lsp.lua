@@ -100,6 +100,9 @@ return {
       -- https://github.com/williamboman/mason-lspconfig.nvim
       "williamboman/mason-lspconfig.nvim",
 
+      -- Enables auto-installation of Debug Adapters.
+      "jay-babu/mason-nvim-dap.nvim",
+
       -- Completion engine for as-you-type suggestions.
       -- https://github.com/hrsh7th/nvim-cmp
       "hrsh7th/nvim-cmp",
@@ -350,8 +353,14 @@ return {
 
       -- Show LSP status above the status line.
       require("fidget").setup()
+
+      -- Configure DAP with default adapters.
+      -- https://github.com/jay-babu/mason-nvim-dap.nvim#configuration
+      require("mason-nvim-dap").setup({
+        ensure_installed = { "codelldb", "js-debug-adapter" },
+        automatic_installation = true,
+        handlers = {}, -- sets up dap in the predefined manner
+      })
     end,
   },
-
-  -- TODO: DAP for Rust.
 }

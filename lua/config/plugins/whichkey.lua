@@ -18,6 +18,12 @@ return {
         ["<leader>w"] = {
           name = "window",
         },
+        ["<leader>d"] = {
+          name = "debug",
+        },
+        ["<leader>t"] = {
+          name = "tab",
+        },
         ["<leader>q"] = {
           name = "quit",
         },
