@@ -42,6 +42,9 @@ return {
         ["<leader>h"] = {
           name = "hunk",
         },
+        ["<leader>x"] = {
+          name = "problems",
+        },
       })
     end,
   },

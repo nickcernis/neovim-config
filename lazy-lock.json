@@ -35,6 +35,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "2a125024a137677930efcfdf720f205504c97268" },
   "plenary.nvim": { "branch": "master", "commit": "499e0743cf5e8075cd32af68baa3946a1c76adf1" },
   "tokyonight.nvim": { "branch": "main", "commit": "161114bd39b990995e08dbf941f6821afbdcd666" },
+  "trouble.nvim": { "branch": "main", "commit": "23c1327b85bd51258f9f8bd8f77f024acef6de69" },
   "which-key.nvim": { "branch": "main", "commit": "e271c28118998c93a14d189af3395812a1aa646c" },
   "wrapping.nvim": { "branch": "master", "commit": "5e87f1424c86c50d3bc205830aa56ed1cad45467" }
 }

@@ -130,6 +130,10 @@ return {
       "jayp0521/mason-null-ls.nvim",
       "nvim-lua/plenary.nvim", -- needed for null-ls
 
+      -- Adds a drawer to show all problems in the document or workspace.
+      "folke/trouble.nvim",
+      "nvim-tree/nvim-web-devicons", -- neded for trouble.nvim.
+
       -- Consider LSP saga?
       -- https://github.com/glepnir/lspsaga.nvim
     },
@@ -353,6 +357,26 @@ return {
 
       -- Show LSP status above the status line.
       require("fidget").setup()
+
+      -- Show trouble.nvim drawer.
+      vim.keymap.set(
+        "n",
+        "<leader>xx",
+        "<cmd>TroubleToggle<cr>",
+        { silent = true, noremap = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>xw",
+        "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        { silent = true, noremap = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>xd",
+        "<cmd>TroubleToggle document_diagnostics<cr>",
+        { silent = true, noremap = true }
+      )
 
       -- Configure DAP with default adapters.
       -- https://github.com/jay-babu/mason-nvim-dap.nvim#configuration
