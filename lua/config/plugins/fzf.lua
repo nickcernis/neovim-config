@@ -23,6 +23,12 @@ return {
       )
       vim.keymap.set(
         "n",
+        "<c-y>",
+        fzf_lua.lsp_document_symbols,
+        { desc = "find buffers", silent = true, noremap = true }
+      )
+      vim.keymap.set(
+        "n",
         "<c-p>",
         fzf_lua.files,
         { desc = "files", silent = true, noremap = true }

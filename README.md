@@ -47,6 +47,7 @@ git clone https://github.com/nickcernis/neovim-config nvim
 - `Ctrl-e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
 - `Ctrl-l` for the project switcher.
 - `Ctrl-b` for buffer list, then Ctrl-x to close buffer.
+- `Ctrl-y` for LSP symbols list.
 - `Ctrl-s` for git status, left to stage, right to unstage.
 - `Ctrl-j` for word jump targets.
 - `Ctrl-t` for tab jump targets.
