@@ -18,6 +18,18 @@ mkdir ~/.config && cd ~/.config
 git clone https://github.com/nickcernis/neovim-config nvim
 ```
 
+Optionally set the theme for bat to match Neovim, so that preview colours match:
+
+```sh
+mkdir -p "$(bat --config-dir)/themes"
+cd "$(bat --config-dir)/themes"
+curl https://raw.githubusercontent.com/enkia/enki-theme/master/scheme/Enki-Tokyo-Night.tmTheme -o Enki-Tokyo-Night.tmTheme
+bat cache --build
+bat --list-themes | grep Enki-Tokyo-Night -c # should output 1
+bat --generate-config-file
+echo '--theme="Enki-Tokyo-Night"' > "$(bat --config-dir)/config"
+```
+
 ## Layout
 
 ```
