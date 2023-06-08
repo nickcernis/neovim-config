@@ -23,10 +23,10 @@ Optionally set the theme for bat to match Neovim, so that preview colours match:
 ```sh
 mkdir -p "$(bat --config-dir)/themes"
 cd "$(bat --config-dir)/themes"
-curl -O https://raw.githubusercontent.com/enkia/enki-theme/master/scheme/Enki-Tokyo-Night.tmTheme
+curl -O https://github.com/folke/tokyonight.nvim/blob/main/extras/sublime/tokyonight_night.tmTheme
 bat cache --build
-bat --list-themes | grep Enki-Tokyo-Night -c # should output 1
-echo '--theme="Enki-Tokyo-Night"' > "$(bat --config-dir)/config"
+bat --list-themes | grep tokyo # should output "tokyonight_night"
+echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 ```
 
 ## Layout
