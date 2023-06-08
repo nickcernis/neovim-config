@@ -378,6 +378,10 @@ return {
         { silent = true, noremap = true }
       )
 
+      -- Lazy load snippets so they're available in completions.
+      -- See https://github.com/L3MON4D3/LuaSnip#add-snippets.
+      require("luasnip.loaders.from_vscode").lazy_load()
+
       -- Configure DAP with default adapters.
       -- https://github.com/jay-babu/mason-nvim-dap.nvim#configuration
       require("mason-nvim-dap").setup({
