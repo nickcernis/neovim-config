@@ -5,7 +5,10 @@ return {
     "Pocco81/auto-save.nvim",
     config = function()
       require("auto-save").setup({
-        -- trigger_events = {"InsertLeave", "TextChanged"}, -- defaults, see :h actions to extend.
+        -- Removed TextChanged default event to prevent whitespace clearing
+        -- when pressing enter in a block, due to autocommand that strips
+        -- white space on save.
+        trigger_events = { "InsertLeave" },
         execution_message = {
           -- Message to print on save.
           message = function()
