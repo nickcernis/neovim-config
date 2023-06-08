@@ -127,10 +127,8 @@ Things to explore:
 
 ### Misc
 
-- Try this theme: https://github.com/jesseleite/nvim-noirbuddy
-- Explore debuggers, DAP. Combination of Mason and FzfLua might help already.
+- Hex editor backed by xxd: https://github.com/RaafatTurki/hex.nvim
 - Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html
-- Snippets. Learn a few from rafamadriz/friendly-snippets, which is already part of the LSP setup.
 - Check how file handling works if open buffers are deleted outside of nvim, such as when when switching git branch.
 - Explore writing modes, perhaps https://github.com/Pocco81/true-zen.nvim or https://github.com/folke/zen-mode.nvim.
 - Look at neural and similar? https://github.com/dense-analysis/neural or https://github.com/zbirenbaum/copilot.lua or https://github.com/Bryley/neoai.nvim
