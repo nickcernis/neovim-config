@@ -7,12 +7,12 @@ return {
       require("gitsigns").setup({
         -- Prefer coloured lines over symbols.
         signs = {
-          add = { text = "▎" },
-          change = { text = "▎" },
-          delete = { text = "▎" },
+          add = { text = "│" },
+          change = { text = "│" },
+          delete = { text = "_" },
           topdelete = { text = "‾" },
-          changedelete = { text = "▎" },
-          untracked = { text = "▎" },
+          changedelete = { text = "~" },
+          untracked = { text = "┆" },
         },
         keymaps = {
           noremap = true,
