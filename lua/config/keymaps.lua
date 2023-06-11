@@ -133,18 +133,95 @@ set(
 set(
   "n",
   "<leader>tt",
-  ":lua KeymapFunctions.spawn_kitty_tab()<cr><cr>",
+  ":lua Keymaps.kitty_new_tab()<cr><cr>",
   { silent = true, noremap = true, desc = "new kitty tab" }
 )
 
-KeymapFunctions = {}
+set(
+  "n",
+  "<leader>tr",
+  ":lua Keymaps.kitty_rerun_last_command()<cr><cr>",
+  { silent = true, noremap = true, desc = "rerun last command" }
+)
+
+set(
+  "n",
+  "<leader>tg",
+  ":lua Keymaps.kitty_open_or_switch_to_lazygit()<cr><cr>",
+  { silent = true, noremap = true, desc = "lazygit" }
+)
+
+Keymaps = {}
+
+function Keymaps._kitty_ls()
+  -- Execute 'kitty @ ls' to list all tab information.
+  local success, output = pcall(vim.fn.system, "kitty @ ls")
+
+  -- Parse the output as JSON.
+  local windows = {}
+  if success then
+    local decoded_output = vim.fn.json_decode(output)
+    if type(decoded_output) == "table" then
+      windows = decoded_output
+    end
+  end
+
+  return windows
+end
+
+-- Get the ID of the tab with `name` from the focused window.
+function Keymaps._kitty_tab_id_with_name(name)
+  local windows = Keymaps._kitty_ls()
+  for _, window in ipairs(windows) do
+    if window.is_focused == true then
+      for _, tab in ipairs(window.tabs) do
+        if tab.title == name then
+          return tab.id
+        end
+      end
+    end
+  end
+
+  return -1
+end
 
 -- Spawns a new kitty terminal tab in the current Neovim working directory.
--- Expects the following in kitty.conf:
+-- All kitty functions assume the following in kitty.conf:
 -- allow_remote_control yes
 -- listen_on unix:/tmp/mykitty
-function KeymapFunctions.spawn_kitty_tab()
+function Keymaps.kitty_new_tab()
   local cwd = vim.fn.getcwd()
-  local command = string.format("!kitty @ launch --type=tab --cwd='%s'", cwd)
+  local command = string.format(
+    "!kitty @ launch --type=tab --tab-title 'shell' --cwd='%s'",
+    cwd
+  )
   vim.cmd(command)
+end
+
+-- Re-run last kitty command and focus the tab.
+function Keymaps.kitty_rerun_last_command()
+  local tab_id = Keymaps._kitty_tab_id_with_name('shell')
+  print("tab_id is" .. tostring(tab_id))
+  vim.cmd(string.format([[!kitty @ send-text --match-tab 'id:%s' '\!\!\\x0d']], tab_id))
+  vim.cmd(string.format("!kitty @ focus-tab --match 'id:%s'", tab_id))
+end
+
+-- Switch to Lazygit tab or create it if it does not yet exist.
+function Keymaps.kitty_open_or_switch_to_lazygit()
+  local tab_id = Keymaps._kitty_tab_id_with_name('lazygit')
+
+  -- If the tab doesn't exist, create a new one.
+  if tab_id == -1 then
+    local cwd = vim.fn.getcwd()
+    local command = string.format(
+      "!kitty @ launch --type=tab --tab-title 'lazygit' --cwd='%s'",
+      cwd
+    )
+    vim.cmd(command)
+    vim.cmd([[!kitty @ send-text --match-tab 'title:^lazygit' 'lazygit\\x0d']])
+  else
+    -- Switch to the existing tab
+    local command = string.format("!kitty @ focus-tab --match 'id:%s'", tab_id)
+    vim.cmd(command)
+  end
 end
