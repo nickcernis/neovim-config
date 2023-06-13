@@ -200,25 +200,44 @@ end
 
 -- Re-run last kitty command and focus the tab.
 function Keymaps.kitty_rerun_last_command()
-  local tab_id = Keymaps._kitty_tab_id_with_name('shell')
+  local tab_id = Keymaps._kitty_tab_id_with_name("shell")
   print("tab_id is" .. tostring(tab_id))
-  vim.cmd(string.format([[!kitty @ send-text --match-tab 'id:%s' '\!\!\\x0d']], tab_id))
+  vim.cmd(
+    string.format(
+      [[!kitty @ send-text --match-tab 'id:%s' '\!\!\\x0d']],
+      tab_id
+    )
+  )
   vim.cmd(string.format("!kitty @ focus-tab --match 'id:%s'", tab_id))
 end
 
 -- Switch to Lazygit tab or create it if it does not yet exist.
 function Keymaps.kitty_open_or_switch_to_lazygit()
-  local tab_id = Keymaps._kitty_tab_id_with_name('lazygit')
+  local tab_id = Keymaps._kitty_tab_id_with_name("lazygit")
 
   -- If the tab doesn't exist, create a new one.
   if tab_id == -1 then
     local cwd = vim.fn.getcwd()
     local command = string.format(
-      "!kitty @ launch --type=tab --tab-title 'lazygit' --cwd='%s'",
+      "!kitty @ launch --type=tab --tab-title 'lazygit' --cwd='%s' lazygit",
       cwd
     )
     vim.cmd(command)
-    vim.cmd([[!kitty @ send-text --match-tab 'title:^lazygit' 'lazygit\\x0d']])
+    -- Schedule the second command to open lazygit after the first command.
+    vim.schedule(function()
+      vim.cmd(
+        [[silent !kitty @ send-text --match-tab 'title:^lazygit' 'lazygit\\x0d']]
+      )
+
+      -- Dismiss the "Press ENTER or type command to continue" prompt if needed.
+      -- vim.api.nvim_input("\n")
+      -- Alternative way to dismiss the prompt:
+      -- vim.api.nvim_feedkeys(
+      --   vim.api.nvim_replace_termcodes("<CR>", true, false, true),
+      --   "n",
+      --   true
+      -- )
+    end)
   else
     -- Switch to the existing tab
     local command = string.format("!kitty @ focus-tab --match 'id:%s'", tab_id)
