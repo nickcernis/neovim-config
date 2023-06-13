@@ -25,7 +25,7 @@ return {
         "n",
         "<c-y>",
         fzf_lua.lsp_document_symbols,
-        { desc = "find buffers", silent = true, noremap = true }
+        { desc = "find symbols", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
