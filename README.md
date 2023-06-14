@@ -11,6 +11,12 @@ brew tap homebrew/cask-fonts
 brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit font-fira-code-nerd-font
 ```
 
+You'll also need node, golang, zig and zstd to auto-install language servers (zstd is used to compress the Zig language server):
+
+```sh
+brew install node golang zig zstd
+```
+
 Then:
 
 ```sh
