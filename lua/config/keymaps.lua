@@ -203,7 +203,7 @@ function Keymaps.kitty_rerun_last_command()
   local tab_id = Keymaps._kitty_tab_id_with_name("shell")
   vim.cmd(
     string.format(
-      [[!kitty @ send-text --match-tab 'id:%s' '\!\!\\x0d']], -- TODO: \\x0d isn't consistently working to submit enter.
+      "!kitty @ send-text --match-tab 'id:%s' '\\!\\!\\x0d'",
       tab_id
     )
   )
