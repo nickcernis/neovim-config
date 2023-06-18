@@ -116,9 +116,11 @@ return {
       "hrsh7th/cmp-nvim-lua", -- Complete Neovim's Lua API.
 
       -- Snippets
-      "L3MON4D3/LuaSnip", -- Snippet plugin.
-      "saadparwaiz1/cmp_luasnip", -- See snippets in completion list.
-      "rafamadriz/friendly-snippets", -- Large snippet library.
+      -- NOTE: disabled snippets for now; I just don't use them that much,
+      -- and they can interfere with typing.
+      -- "L3MON4D3/LuaSnip", -- Snippet plugin.
+      -- "saadparwaiz1/cmp_luasnip", -- See snippets in completion list.
+      -- "rafamadriz/friendly-snippets", -- Large snippet library.
 
       -- Fidget adds LSP status and logging above the status line for
       -- long-running LSP tasks. Useful to keep an eye on LSP processes
@@ -294,15 +296,15 @@ return {
       local cmp = require("cmp")
 
       cmp.setup({
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-          end,
-        },
-        window = {
-          -- completion = cmp.config.window.bordered(),
-          -- documentation = cmp.config.window.bordered(),
-        },
+        -- snippet = {
+        --   expand = function(args)
+        --     require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+        --   end,
+        -- },
+        -- window = {
+        --   -- completion = cmp.config.window.bordered(),
+        --   -- documentation = cmp.config.window.bordered(),
+        -- },
         -- TODO: compare with mappings here: https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#LL394C4-L394C4
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -315,7 +317,7 @@ return {
         sources = {
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
-          { name = "luasnip" },
+          -- { name = "luasnip" },
           { name = "path" },
           -- { name = 'buffer' },
         },
@@ -380,7 +382,7 @@ return {
 
       -- Lazy load snippets so they're available in completions.
       -- See https://github.com/L3MON4D3/LuaSnip#add-snippets.
-      require("luasnip.loaders.from_vscode").lazy_load()
+      -- require("luasnip.loaders.from_vscode").lazy_load()
 
       -- Configure DAP with default adapters.
       -- https://github.com/jay-babu/mason-nvim-dap.nvim#configuration
