@@ -1,6 +1,37 @@
 -- Local plugins from ~/.config/nvim/local-plugins/.
 
 return {
+  -- Kitty terminal commands.
+  -- See local-plugins/kitty/lua/kitty.lua.
+  {
+    dir = "~/.config/nvim/local-plugins/kitty",
+    config = function()
+      -- Open new Kitty tab in current working directory.
+      vim.keymap.set(
+        "n",
+        "<leader>tt",
+        ':lua require("kitty").new_tab()<cr><cr>',
+        { silent = true, noremap = true, desc = "new kitty tab" }
+      )
+
+      -- Re-run last Kitty command from the shell tab.
+      vim.keymap.set(
+        "n",
+        "<leader>tr",
+        ':lua require("kitty").rerun_last_command()<cr><cr>',
+        { silent = true, noremap = true, desc = "rerun last command" }
+      )
+
+      -- Open or switch to a tab displaying lazygit.
+      vim.keymap.set(
+        "n",
+        "<leader>tg",
+        ':lua require("kitty").open_or_switch_to_lazygit()<cr><cr>',
+        { silent = true, noremap = true, desc = "lazygit" }
+      )
+    end,
+  },
+
   -- GitHub CLI UI picker.
   -- See local-plugins/fzf-github/lua/fzf-github.lua.
   {
