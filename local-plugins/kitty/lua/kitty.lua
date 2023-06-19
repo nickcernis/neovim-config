@@ -71,14 +71,14 @@ function M.open_or_switch_to_lazygit()
   if tab_id == -1 then
     local cwd = vim.fn.getcwd()
     local command = string.format(
-      "!kitty @ launch --type=tab --tab-title 'lazygit' --cwd='%s' lazygit",
+      "!kitty @ launch --type=tab --tab-title 'lazygit' --cwd='%s'",
       cwd
     )
     vim.cmd(command)
     -- Schedule the second command to open lazygit after the first command.
     vim.schedule(function()
       vim.cmd(
-        [[silent !kitty @ send-text --match-tab 'title:^lazygit' 'lazygit\\x0d']]
+        "silent !kitty @ send-text --match-tab 'title:^lazygit' 'lazygit\\x0d'"
       )
 
       -- Dismiss the "Press ENTER or type command to continue" prompt if needed.
