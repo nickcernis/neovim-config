@@ -17,37 +17,37 @@ return {
 
       vim.keymap.set(
         "n",
-        "<c-b>",
+        "<leader>fb",
         fzf_lua.buffers,
-        { desc = "find buffers", silent = true, noremap = true }
+        { desc = "buffers", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
-        "<c-y>",
+        "<leader>fy",
         fzf_lua.lsp_document_symbols,
-        { desc = "find symbols", silent = true, noremap = true }
+        { desc = "symbols", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
-        "<c-p>",
+        "<leader>fp",
         fzf_lua.files,
         { desc = "files", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
-        "<c-g>",
+        "<leader>fg",
         fzf_lua.live_grep,
         { desc = "grep", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
-        "<c-f>",
+        "<leader>ff",
         fzf_lua.blines,
-        { desc = "find line", silent = true, noremap = true }
+        { desc = "find", silent = true, noremap = true }
       )
       vim.keymap.set(
         "n",
-        "<c-s>",
+        "<leader>fs",
         fzf_lua.git_status,
         { desc = "git status", silent = true, noremap = true }
       )

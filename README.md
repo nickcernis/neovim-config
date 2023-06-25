@@ -58,14 +58,14 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 
 ### General
 
-- `Ctrl-p` to find files in current project.
-- `Ctrl-f` to find lines in current file (similar to swiper in Emacs).
-- `Ctrl-g` to search text in current project (backed by ripgrep).
-- `Ctrl-e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
-- `Ctrl-l` for the project switcher.
-- `Ctrl-b` for buffer list, then Ctrl-x to close buffer.
-- `Ctrl-y` for LSP symbols list.
-- `Ctrl-s` for git status, left to stage, right to unstage.
+- `<space> f p` to find files in current project.
+- `<space> f f` to find lines in current file (similar to swiper in Emacs).
+- `<space> f g` to search text in current project (backed by ripgrep).
+- `<space> e` or `Ctrl-e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
+- `<space> f j` for the project switcher.
+- `<space> f b` for buffer list, then Ctrl-x to close buffer.
+- `<space> f y` for LSP symbols list.
+- `<space> f s` for git status, left to stage, right to unstage.
 - `Ctrl-j` for word jump targets.
 - `Ctrl-t` for tab jump targets.
 - `Ctrl-o` to go back in jump list (also reopens closed buffers), Ctrl-i to go forward, :FzfLua jumps for a visual view.
@@ -75,7 +75,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `Alt-g` to find-replace in current project (uses Spectre).
 - `Alt-h`|`Alt-l`|`Alt-[number]` to navigate tabs. Important to set the left option key to Esc+ in iTerm's key prefs (profile settings) for Alt bindings to work on macOS.
 
-### Leader key bindings
+### Other bindings
 
 I use these in normal mode in place of the default Ctrl-w window commands, since I map Ctrl-w to close buffer:
 

@@ -71,7 +71,7 @@ return {
 
       vim.keymap.set(
         "n",
-        "<c-l>",
+        "<leader>fj",
         '<cmd>lua require("fzf-projects").projects()<CR>'
       )
     end,

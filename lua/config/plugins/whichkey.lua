@@ -31,7 +31,7 @@ return {
           name = "git",
         },
         ["<leader>f"] = {
-          name = "file",
+          name = "fuzzy",
         },
         ["<leader>c"] = {
           name = "config",

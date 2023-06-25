@@ -82,26 +82,6 @@ set(
   { silent = true, noremap = true, desc = "close buffer" }
 )
 
--- Config handling
-set(
-  "n",
-  "<leader>ce",
-  "<cmd>edit ~/.config/nvim/init.lua<cr>",
-  { silent = true, noremap = true, desc = "edit config" }
-)
-set(
-  "n",
-  "<leader>cs",
-  "<cmd>source ~/.config/nvim/init.lua<cr>",
-  { silent = true, noremap = true, desc = "source config" }
-)
-set(
-  "n",
-  "<leader>cp",
-  "<cmd>edit ~/.config/nvim/lua/user/plugins.lua<cr>",
-  { silent = true, noremap = true, desc = "edit plugin config" }
-)
-
 -- Nudge text up and down a line in visual mode with J and K.
 set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")
