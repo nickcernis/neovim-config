@@ -22,7 +22,7 @@ return {
           name = "debug",
         },
         ["<leader>t"] = {
-          name = "tab",
+          name = "terminal",
         },
         ["<leader>q"] = {
           name = "quit",
