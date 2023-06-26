@@ -41,7 +41,8 @@ return {
       vim.keymap.set(
         "n",
         "<leader>gh",
-        '<cmd>lua require("fzf-github").githubcli()<CR>'
+        '<cmd>lua require("fzf-github").githubcli()<CR>',
+        { silent = true, noremap = true, desc = "GitHub CLI" }
       )
     end,
   },
