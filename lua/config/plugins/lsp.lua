@@ -204,12 +204,12 @@ return {
             vim.lsp.buf.implementation,
             { buffer = args.buf }
           )
-          vim.keymap.set(
-            "n",
-            "go",
-            vim.lsp.buf.type_definition,
-            { buffer = args.buf }
-          )
+          -- vim.keymap.set(
+          --   "n",
+          --   "go",
+          --   vim.lsp.buf.type_definition,
+          --   { buffer = args.buf }
+          -- )
           vim.keymap.set(
             "n",
             "gr",

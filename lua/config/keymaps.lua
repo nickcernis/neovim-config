@@ -95,6 +95,15 @@ set(
   { silent = true, noremap = true }
 )
 
+-- 'go' to go back ([g]o to [o]riginal).
+-- More natural partner to gd (go to definition) than Ctrl-o.
+set(
+  "n",
+  "go",
+  "<C-o>",
+  { noremap = false, desc = "back" }
+)
+
 -- Quit but save all changed buffers.
 set(
   "n",
