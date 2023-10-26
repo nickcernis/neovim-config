@@ -123,10 +123,6 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 
 ## Wishlist
 
-### To-do
-- [ ] Replace null-ls. See https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621#issuecomment-1675044379 and https://github.com/craftzdog/dotfiles-public/issues/132.
-
-
 Things to explore:
 
 ### Git

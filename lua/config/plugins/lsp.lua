@@ -128,7 +128,7 @@ return {
       "j-hui/fidget.nvim",
 
       -- Integrate linters and formatters that don't use an LSP server.
-      "jose-elias-alvarez/null-ls.nvim",
+      "nvimtools/none-ls.nvim",
       "jayp0521/mason-null-ls.nvim",
       "nvim-lua/plenary.nvim", -- needed for null-ls
 
