@@ -5,46 +5,26 @@ return {
     "folke/which-key.nvim",
     config = function()
       require("which-key").setup({
-        key_labels = {
-          ["<space>"] = "SPC",
-          ["<cr>"] = "RET",
-          ["<tab>"] = "TAB",
-        },
-        layout = {
-          align = "center",
+        preset = "helix",
+        replace = {
+          key = {
+            { "<space>", "SPC" },
+            { "<cr>", "RET" },
+            { "<tab>", "TAB" },
+          },
         },
       })
-      require("which-key").register({
-        ["<leader>w"] = {
-          name = "window",
-        },
-        ["<leader>d"] = {
-          name = "debug",
-        },
-        ["<leader>t"] = {
-          name = "terminal",
-        },
-        ["<leader>q"] = {
-          name = "quit",
-        },
-        ["<leader>g"] = {
-          name = "git",
-        },
-        ["<leader>f"] = {
-          name = "fuzzy",
-        },
-        ["<leader>c"] = {
-          name = "config",
-        },
-        ["<leader>b"] = {
-          name = "buffer",
-        },
-        ["<leader>h"] = {
-          name = "hunk",
-        },
-        ["<leader>x"] = {
-          name = "problems",
-        },
+      require("which-key").add({
+        { "<leader>b", group = "buffer" },
+        { "<leader>c", group = "config" },
+        { "<leader>d", group = "debug" },
+        { "<leader>f", group = "fuzzy" },
+        { "<leader>g", group = "git" },
+        { "<leader>h", group = "hunk" },
+        { "<leader>q", group = "quit" },
+        { "<leader>t", group = "terminal" },
+        { "<leader>w", group = "window" },
+        { "<leader>x", group = "problems" },
       })
     end,
   },
