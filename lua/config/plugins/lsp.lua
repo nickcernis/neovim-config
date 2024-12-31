@@ -272,7 +272,7 @@ return {
           "lua_ls",
           "gopls",
           "rust_analyzer",
-          "tsserver",
+          "ts_ls",
           "zls",
         },
         automatic_installation = true,
