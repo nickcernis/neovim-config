@@ -34,14 +34,6 @@ M.projects = function()
       local git_parent_dir = string.match(selected[1], ".*(~.*)$")
       vim.cmd("cd " .. git_parent_dir)
 
-      -- Change the kitty window title. Helpful if multiple projects are open.
-      local cwd = vim.fn.getcwd()
-      local home_path = os.getenv("HOME") or ""
-      local short_path = string.gsub(cwd, home_path, "~")
-      local window_title_command =
-        string.format("!kitty @ set-window-title 'nvim %s'", short_path)
-      vim.cmd(window_title_command)
-
       -- Present the file picker.
       vim.api.nvim_command("FzfLua files")
     end,

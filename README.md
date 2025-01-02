@@ -89,9 +89,6 @@ I use these in normal mode in place of the default Ctrl-w window commands, since
 
 ### Additional leader key bindings
 
-- `<space> t t` to spawn a new Kitty tab using Neovim's current working directory.
-- `<space> t r` to repeat the last ran command in the spawned shell window (great for repeated compilation/runs).
-- `<space> t g` to spawn a new Kitty tab running lazygit, or to switch to it. 
 - `<space> g h` to display a GitHub CLI UI.
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.
@@ -150,7 +147,7 @@ Things to explore:
 
 ### Terminal
 
-I use Kitty panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me in both iTerm and Kitty.)
+I use panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me in both iTerm and Kitty.)
 
 ### Git
 
