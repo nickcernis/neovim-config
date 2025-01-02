@@ -134,7 +134,7 @@ return {
 
       -- Adds a drawer to show all problems in the document or workspace.
       "folke/trouble.nvim",
-      "nvim-tree/nvim-web-devicons", -- neded for trouble.nvim.
+      "nvim-tree/nvim-web-devicons", -- needed for trouble.nvim.
 
       -- Consider LSP saga?
       -- https://github.com/glepnir/lspsaga.nvim
