@@ -1,5 +1,5 @@
 -- Project switcher using fzf.lua
--- Bound to <c-l> in local.lua.
+-- Bound to <leader-f-j> ('Find proJect').
 -- Heavily adapted from https://github.com/ibhagwan/fzf-lua/issues/461#issuecomment-1166900681.
 -- Expects fd to be installed.
 
@@ -33,6 +33,19 @@ M.projects = function()
       -- Switch to the new project root.
       local git_parent_dir = string.match(selected[1], ".*(~.*)$")
       vim.cmd("cd " .. git_parent_dir)
+
+      -- Update terminal working directory using OSC 7. So that opening a new
+      -- terminal split after changing project uses the same current working
+      -- directory as the new project, not the original project. Assumes OSC 7
+      -- support and a terminal set to open new tabs in the cwd.
+      -- See https://lacamb.re/blog/neovim_osc7.html.
+      local expanded_path = vim.fn.expand(git_parent_dir)
+      local osc7 = string.format(
+        "\027]7;file://%s%s\027\\",
+        vim.loop.os_uname().sysname == "Darwin" and "localhost" or "",
+        expanded_path
+      )
+      io.stdout:write(osc7)
 
       -- Present the file picker.
       vim.api.nvim_command("FzfLua files")
