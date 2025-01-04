@@ -12,8 +12,9 @@ return {
           comments = { italic = false },
           keywords = { italic = false },
         },
+        -- See https://github.com/folke/tokyonight.nvim/blob/main/extras/lua/tokyonight_night.lua.
         on_colors = function(colors)
-          colors.comment = "#747fb3" -- Original about "#575f86".
+          colors.comment = "#747fb3" -- Original was "#565f89", contrast too low.
         end,
       })
       vim.cmd("colorscheme tokyonight-night")
