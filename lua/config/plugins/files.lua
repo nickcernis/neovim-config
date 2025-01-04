@@ -1,27 +1,27 @@
 return {
-  -- File manipulation (creation, deletion, rename, move) by editing a regular buffer.
-  -- https://github.com/stevearc/oil.nvim
   {
-    "stevearc/oil.nvim",
-    opts = {},
+    -- Mini file browser and editor.
+    -- leader m to open, q to close, jk to nav up and down, hl in and out,
+    -- edit/create files by changing them in the nav buffer, press = to
+    -- sync that buffer with the filesystem.
+    -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md
+    "echasnovski/mini.files",
+    version = false,
+    dependencies = { 'echasnovski/mini.icons' },
     config = function()
-      require("oil").setup({
-        delete_to_trash = true,
-        keymaps = {
-          ["q"] = { "actions.close", mode = "n" },
+      require("mini.files").setup({
+        options = {
+          permanent_delete = false,
         },
       })
 
       -- Bindings.
       vim.keymap.set(
         "n",
-        "<leader>o",
-        "<cmd>Oil --float .<cr>",
-        { silent = true, noremap = true, desc = "oil files" }
+        "<leader>m",
+        "<cmd>lua MiniFiles.open()<CR>",
+        { silent = true, noremap = true, desc = "mini files" }
       )
     end,
-    -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
   },
 }
