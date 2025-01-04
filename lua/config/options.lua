@@ -5,6 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Leader must be set before plugins are loaded in case any use leader key bindings.
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Experimental Neovim 0.8 feature to hide command line unless in use.
 -- Disabled for now because constant prompts to press Enter whenever

@@ -73,8 +73,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `Ctrl-l` to go forward, :FzfLua jumps for a visual view.
 - `Ctrl-w` to close the buffer.
 - `Ctrl-q` to save all and quit.
-- `Alt-f` to find-replace in current buffer (uses Spectre).
-- `Alt-g` to find-replace in current project (uses Spectre).
+- `Ctrl-r` to find-replace across project (uses Grug Find and Replace).
 - `Alt-h`|`Alt-l`|`Alt-[number]` to navigate tabs. Important to set the left option key to Esc+ in iTerm's key prefs (profile settings) for Alt bindings to work on macOS.
 
 ### Other bindings
