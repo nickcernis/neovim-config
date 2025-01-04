@@ -14,5 +14,11 @@ return {
       "<cmd>GrugFar<CR>",
       { silent = true, noremap = true, desc = 'replace' }
     )
+    vim.keymap.set(
+      "n",
+      "<leader>r",
+      "<cmd>GrugFar<CR>",
+      { silent = true, noremap = true, desc = 'replace' }
+    )
   end,
 }
