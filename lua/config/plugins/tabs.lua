@@ -27,86 +27,74 @@ return {
     -- Move between tabs.
     vim.keymap.set(
       "n",
-      "<a-.>",
+      "<c-j>",
       "<cmd>BufferNext<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-,>",
-      "<cmd>BufferPrevious<cr>",
-      { silent = true, noremap = true }
-    )
-    vim.keymap.set(
-      "n",
-      "<a-l>",
-      "<cmd>BufferNext<cr>",
-      { silent = true, noremap = true }
-    )
-    vim.keymap.set(
-      "n",
-      "<a-h>",
+      "<c-k>",
       "<cmd>BufferPrevious<cr>",
       { silent = true, noremap = true }
     )
 
     vim.keymap.set(
       "n",
-      "<a-1>",
+      "<c-1>",
       "<cmd>BufferGoto1<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-2>",
+      "<c-2>",
       "<cmd>BufferGoto2<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-3>",
+      "<c-3>",
       "<cmd>BufferGoto3<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-4>",
+      "<c-4>",
       "<cmd>BufferGoto4<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-5>",
+      "<c-5>",
       "<cmd>BufferGoto5<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-6>",
+      "<c-6>",
       "<cmd>BufferGoto6<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-7>",
+      "<c-7>",
       "<cmd>BufferGoto7<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-8>",
+      "<c-8>",
       "<cmd>BufferGoto8<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-9>",
+      "<c-9>",
       "<cmd>BufferGoto9<cr>",
       { silent = true, noremap = true }
     )
     vim.keymap.set(
       "n",
-      "<a-0>",
+      "<c-0>",
       "<cmd>BufferLast<cr>",
       { silent = true, noremap = true }
     )

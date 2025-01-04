@@ -74,7 +74,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `Ctrl-w` to close the buffer.
 - `Ctrl-q` to save all and quit.
 - `Ctrl-r` to find-replace across project (uses Grug Find and Replace).
-- `Alt-h`|`Alt-l`|`Alt-[number]` to navigate tabs. Important to set the left option key to Esc+ in iTerm's key prefs (profile settings) for Alt bindings to work on macOS.
+- `Ctrl-j`|`Ctrl-k`|`Ctrl-[number]` to navigate tabs.
 
 ### Other bindings
 
