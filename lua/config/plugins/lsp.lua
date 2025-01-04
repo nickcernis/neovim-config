@@ -281,12 +281,6 @@ return {
         local float_opts = {
           focus = false,
           border = "rounded",
-          close_events = {
-            "BufLeave",
-            "CursorMoved",
-            "InsertEnter",
-            "FocusLost",
-          },
         }
         vim.diagnostic.open_float(nil, float_opts)
       end, { noremap = true, silent = true })
