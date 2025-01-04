@@ -12,12 +12,6 @@ return {
         "<cmd>HopWordMW<cr>",
         { silent = true, noremap = true, desc = "jump to" }
       )
-      vim.keymap.set(
-        "n",
-        "<c-j>",
-        "<cmd>HopWordMW<cr>",
-        { silent = true, noremap = true, desc = "jump to" }
-      )
     end,
   },
 }

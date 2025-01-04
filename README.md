@@ -1,6 +1,6 @@
 # Neovim config
 
-My personal Neovim config, Lua-only, from scratch.
+My personal Neovim config, Lua-only, from scratch where "scratch" means a bunch of plugins supplemented with personal quirks.
 
 ## Setup
 
@@ -8,7 +8,7 @@ Assumes macOS and Neovim 0.9+.
 
 ```sh
 brew tap homebrew/cask-fonts
-brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit font-fira-code-nerd-font
+brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit
 ```
 
 You'll also need node, golang, zig and zstd to auto-install language servers (zstd is used to compress the Zig language server):
@@ -61,14 +61,16 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
-- `<space> e` or `Ctrl-e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
+- `<space> e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
+- `<space> m` for mini file browser: create, edit, or move files by editing the nav buffer then press = in normal mode to commit changes. Browse with hjkl.
 - `<space> f j` for the project switcher.
 - `<space> f b` for buffer list, then Ctrl-x to close buffer.
 - `<space> f y` for LSP symbols list.
 - `<space> f s` for git status, left to stage, right to unstage.
-- `Ctrl-j` for word jump targets.
-- `Ctrl-t` for tab jump targets.
-- `Ctrl-o` to go back in jump list (also reopens closed buffers), Ctrl-i to go forward, :FzfLua jumps for a visual view.
+- `<space> j` for word jump targets.
+- `<space> t` for tab jump targets.
+- `Ctrl-h` to go back in jump list (also reopens closed buffers).
+- `Ctrl-l` to go forward, :FzfLua jumps for a visual view.
 - `Ctrl-w` to close the buffer.
 - `Ctrl-q` to save all and quit.
 - `Alt-f` to find-replace in current buffer (uses Spectre).
@@ -92,6 +94,9 @@ I use these in normal mode in place of the default Ctrl-w window commands, since
 - `<space> g h` to display a GitHub CLI UI.
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.
+- `<space> h R` to reset the current buffer.
+- `<space> h s` to stage the hunk. 
+- `<space> h S` to stage the buffer. 
 
 ### LSP
 
@@ -147,7 +152,7 @@ Things to explore:
 
 ### Terminal
 
-I use panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me in both iTerm and Kitty.)
+I use panes or tabs instead of Neovim's terminal emulation. Long-running terminal processes in Neovim itself reduce editor performance for me. (If I open a [toggleterm](https://github.com/akinsho/toggleterm.nvim), then run `yes` and toggle the terminal closed, Neovim movements and edits lag for me.)
 
 ### Git
 

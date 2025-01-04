@@ -95,14 +95,24 @@ set(
   { silent = true, noremap = true }
 )
 
--- 'go' to go back ([g]o to [o]riginal).
--- More natural partner to gd (go to definition) than Ctrl-o.
+-- c-h to go back in cursor history
+-- More natural than Ctrl-o.
 set(
   "n",
-  "go",
+  "<c-h>",
   "<C-o>",
   { noremap = false, desc = "back" }
 )
+
+-- c-l to go forward in cursor history
+-- More natural than Ctrl-i.
+set(
+  "n",
+  "<c-l>",
+  "<C-i>",
+  { noremap = false, desc = "back" }
+)
+
 
 -- Quit but save all changed buffers.
 set(

@@ -11,7 +11,7 @@ return {
     -- Jump to tab by letter, amazing when your tab list looks like your product manager's browser window.
     vim.keymap.set(
       "n",
-      "<c-t>",
+      "<leader>t",
       "<cmd>BufferPick<cr>",
       { silent = true, noremap = true }
     )

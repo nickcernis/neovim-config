@@ -258,12 +258,6 @@ return {
         "<cmd>NvimTreeToggle<cr>",
         { silent = true, noremap = true, desc = "browse files" }
       )
-      vim.keymap.set(
-        "n",
-        "<c-e>",
-        "<cmd>NvimTreeToggle<cr>",
-        { silent = true, noremap = true, desc = "browse files" }
-      )
     end,
   },
 }
