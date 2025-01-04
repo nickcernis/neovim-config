@@ -60,6 +60,9 @@ vim.opt.listchars:append("nbsp:␣")
 -- Replace ~ with space on empty lines
 vim.opt.fillchars:append { eob = ' ' }
 
+-- Remove white lines between window splits.
+vim.opt.fillchars:append { vert = ' ' }
+
 -- Alter tab widths.
 -- These values may be overridden by guess-indent.
 vim.opt.tabstop = 4 -- default 8
@@ -88,3 +91,6 @@ vim.o.smartcase = true
 -- when horizontal splitting, below when vertical splitting).
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+-- Hide the winbar
+vim.opt.winbar = nil
