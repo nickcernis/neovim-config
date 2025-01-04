@@ -261,6 +261,36 @@ return {
         { text = "", numhl = "DiagnosticDefaultHint" }
       )
 
+      vim.diagnostic.config({
+        virtual_text = false, -- Disable inline diagnostics.
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+        float = {
+          border = "rounded",
+          source = "always",
+          header = "",
+          prefix = "",
+        },
+      })
+
+      -- Show diagnostics in a floating window with leader-d.
+      -- Close with 'q' or '<esc>'.
+      vim.keymap.set("n", "<leader>d", function()
+        local float_opts = {
+          focus = false,
+          border = "rounded",
+          close_events = {
+            "BufLeave",
+            "CursorMoved",
+            "InsertEnter",
+            "FocusLost",
+          },
+        }
+        vim.diagnostic.open_float(nil, float_opts)
+      end, { noremap = true, silent = true })
+
       -- Activate mason and mason-lspconfig.
       require("mason").setup()
 
