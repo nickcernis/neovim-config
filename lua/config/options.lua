@@ -55,6 +55,10 @@ vim.opt.listchars:append("extends:⟩")
 vim.opt.listchars:append("precedes:⟨")
 vim.opt.listchars:append("nbsp:␣")
 
+
+-- Replace ~ with space on empty lines
+vim.opt.fillchars:append { eob = ' ' }
+
 -- Alter tab widths.
 -- These values may be overridden by guess-indent.
 vim.opt.tabstop = 4 -- default 8
