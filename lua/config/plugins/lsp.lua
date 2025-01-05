@@ -385,23 +385,20 @@ return {
       require("fidget").setup()
 
       -- Show trouble.nvim drawer.
+      -- https://github.com/folke/trouble.nvim?tab=readme-ov-file#-usage
+      require("trouble").setup()
+
       vim.keymap.set(
         "n",
         "<leader>xx",
-        "<cmd>TroubleToggle<cr>",
-        { silent = true, noremap = true }
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        { silent = true, noremap = true, desc = "trouble buffer" }
       )
       vim.keymap.set(
         "n",
         "<leader>xw",
-        "<cmd>TroubleToggle workspace_diagnostics<cr>",
-        { silent = true, noremap = true }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>xd",
-        "<cmd>TroubleToggle document_diagnostics<cr>",
-        { silent = true, noremap = true }
+        "<cmd>Trouble diagnostics toggle<cr>",
+        { silent = true, noremap = true, desc = "trouble workspace" }
       )
 
       -- Lazy load snippets so they're available in completions.
