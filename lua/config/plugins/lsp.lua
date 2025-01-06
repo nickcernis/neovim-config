@@ -127,11 +127,6 @@ return {
       -- and :LspRestart if needed, without taking up status line space.
       "j-hui/fidget.nvim",
 
-      -- Integrate linters and formatters that don't use an LSP server.
-      "nvimtools/none-ls.nvim",
-      "jayp0521/mason-null-ls.nvim",
-      "nvim-lua/plenary.nvim", -- needed for null-ls
-
       -- Adds a drawer to show all problems in the document or workspace.
       "folke/trouble.nvim",
       "nvim-tree/nvim-web-devicons", -- needed for trouble.nvim.
@@ -157,33 +152,6 @@ return {
           -- K to show hover hints
           if client.server_capabilities.hoverProvider then
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
-          end
-
-          local lsp_format = function(bufnr)
-            vim.lsp.buf.format({
-              filter = function(client_)
-                -- Prevent certain LSP servers from formatting, deferring to an
-                -- external formatter via null-ls.
-                -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
-                if client_.name == "tsserver" or client_.name == "lua_ls" then
-                  return client_.name == "null-ls"
-                else
-                  return true
-                end
-              end,
-              bufnr = bufnr,
-            })
-            vim.cmd("silent GuessIndent") -- Re-run in case default indent size changed during formatting.
-          end
-
-          -- <Ctrl-;> to format.
-          if client.server_capabilities.documentFormattingProvider then
-            vim.keymap.set(
-              { "n", "v" },
-              "<c-;>",
-              lsp_format, -- vim.lsp.buf.format,
-              { buffer = args.buf }
-            )
           end
 
           vim.keymap.set(
@@ -367,19 +335,6 @@ return {
         --     require("rust-tools").setup {}
         -- end
       })
-
-      local null_ls = require("null-ls")
-
-      require("mason-null-ls").setup({
-        -- Available tools: https://github.com/jay-babu/mason-null-ls.nvim#available-null-ls-sources
-        ensure_installed = { "stylua", "eslint_d", "prettierd" },
-        automatic_setup = true,
-        automatic_installation = true,
-        handlers = {},
-      })
-
-      -- Set up installed and configured sources above.
-      null_ls.setup()
 
       -- Show LSP status above the status line.
       require("fidget").setup()
