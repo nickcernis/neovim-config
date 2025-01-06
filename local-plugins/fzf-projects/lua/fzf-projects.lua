@@ -30,6 +30,10 @@ M.projects = function()
       -- Close existing buffers.
       vim.cmd("bufdo bwipeout")
 
+      if not selected or not selected[1] then
+        return
+      end
+
       -- Switch to the new project root.
       local git_parent_dir = string.match(selected[1], ".*(~.*)$")
       vim.cmd("cd " .. git_parent_dir)
