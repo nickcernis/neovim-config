@@ -1,6 +1,6 @@
 return {
   {
-    -- Jump to any word start by typing <Ctrl-j> followed by a character target.
+    -- Jump to any word start by typing <space-j> followed by a character target.
     -- https://github.com/phaazon/hop.nvim
     "phaazon/hop.nvim",
     branch = "v2",
