@@ -1,9 +1,13 @@
 return {
   -- Adds text objects such as vii.
+  -- https://github.com/chrisgrieser/nvim-various-textobjs
   {
     "chrisgrieser/nvim-various-textobjs",
-    config = function()
-      require("various-textobjs").setup({ useDefaultKeymaps = true })
-    end,
+    event = "VeryLazy",
+    opts = {
+      keymaps = {
+        useDefaults = true,
+      },
+    },
   },
 }
