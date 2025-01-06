@@ -11,6 +11,7 @@ return {
       formatters_by_ft = {
         c = { "clang-format" },
         cpp = { "clang-format" },
+        -- TODO: make conditional based on formatting dotfile presence? See 'condition' at https://www.lazyvim.org/plugins/formatting#conformnvim or https://github.com/stevearc/conform.nvim?tab=readme-ov-file#options
         javascript = { "prettierd", "eslint_d", stop_after_first = true },
         lua = { "stylua" },
         markdown = { "deno_fmt" },
