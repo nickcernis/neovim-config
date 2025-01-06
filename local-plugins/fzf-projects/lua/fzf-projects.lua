@@ -79,7 +79,8 @@ M.projects = function()
   local stat_string = "stat -f %m%t%N"
 
   local fd_command = string.format(
-    "fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth %1d %2s /.git --exec %3s | sort -nr",
+    "cd %s && fd --hidden --full-path --absolute-path --fixed-strings --type d --prune --max-depth %1d %2s /.git --exec %3s | sort -nr",
+    _config.cwd,
     _config.max_depth,
     exclude_string,
     stat_string
