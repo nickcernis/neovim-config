@@ -28,7 +28,6 @@ return {
           "rust",
           "scss",
           "toml",
-          "toml",
           "tsx",
           "typescript",
           "vim",
