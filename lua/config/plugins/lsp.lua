@@ -158,19 +158,19 @@ return {
             "n",
             "gd",
             vim.lsp.buf.definition,
-            { buffer = args.buf }
+            { buffer = args.buf, desc = "definition" }
           )
           vim.keymap.set(
             "n",
             "gD",
             vim.lsp.buf.declaration,
-            { buffer = args.buf }
+            { buffer = args.buf, desc = "declaration" }
           )
           vim.keymap.set(
             "n",
             "gi",
             vim.lsp.buf.implementation,
-            { buffer = args.buf }
+            { buffer = args.buf, desc = "implementation" }
           )
           -- vim.keymap.set(
           --   "n",
@@ -182,7 +182,7 @@ return {
             "n",
             "gr",
             vim.lsp.buf.references,
-            { buffer = args.buf }
+            { buffer = args.buf, desc = "references" }
           )
           vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { buffer = args.buf })
           vim.keymap.set(
