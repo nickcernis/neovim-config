@@ -9,30 +9,31 @@ return {
       require("nvim-treesitter.configs").setup({
         -- A list of parser names, or "all"
         -- See https://github.com/nvim-treesitter/nvim-treesitter#supported-languages.
+        -- `:TSInstallInfo` to see installed and available.
         -- `:TSUninstall all` to uninstall all.
         -- `:TSUpdate` to install all from ensure_installed.
         ensure_installed = {
           "c",
-          "lua",
+          "css",
+          "go",
+          "html",
           "javascript",
           "json",
+          "lua",
+          "make",
+          "markdown",
           "php",
           "phpdoc",
+          "query",
           "rust",
-          "toml",
-          "html",
-          "css",
           "scss",
-          "markdown",
-          "make",
-          "typescript",
-          "tsx",
-          "go",
           "toml",
-          "yaml",
+          "toml",
+          "tsx",
+          "typescript",
           "vim",
           "vimdoc",
-          "query",
+          "yaml",
           "zig",
         },
         highlight = { enable = true },
