@@ -61,15 +61,3 @@ vim.api.nvim_create_autocmd(
   "VimResized",
   { group = "my_autocommands", pattern = "*", command = "wincmd =" }
 )
-
--- Show project picker if vim is called without arguments.
-vim.api.nvim_create_autocmd("VimEnter", {
-  group = "my_autocommands",
-  callback = function()
-    if vim.fn.argc() == 0 then
-      vim.api.nvim_command("lua require('fzf-projects').projects()")
-    -- else
-    --   vim.api.nvim_command("FzfLua files") -- shows files instead, not really needed because nvim-tree opens in this case.
-    end
-  end,
-})
