@@ -1,7 +1,9 @@
 return {
   -- File browsing in a helpful tree.
+  -- https://github.com/nvim-neo-tree/neo-tree.nvim
   --
   -- Toggle tree <ctrl-e> ("explore")
+  -- a for new files or folders
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
