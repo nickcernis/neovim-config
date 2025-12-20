@@ -16,6 +16,7 @@ return {
         lua = { "stylua" },
         markdown = { "deno_fmt" },
         php = { "phpcbf" },
+        odin = { "odinfmt" },
         rust = { "rustfmt", lsp_format = "fallback" },
         sh = { "shfmt" },
       },
@@ -23,6 +24,11 @@ return {
       formatters = {
         shfmt = {
           prepend_args = { "-i", "2" },
+        },
+        odinfmt = {
+          command = "/Users/nick/Play/odin/ols/odinfmt",
+          args = { "-stdin" },
+          stdin = true,
         },
       },
     },
