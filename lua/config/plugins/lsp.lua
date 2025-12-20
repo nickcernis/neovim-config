@@ -14,6 +14,7 @@ return {
         "clangd",
         "lua_ls",
         "gopls",
+        "ols",
         "rust_analyzer",
         "ts_ls",
         "zls",
