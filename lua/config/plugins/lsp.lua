@@ -253,22 +253,15 @@ return {
         vim.diagnostic.open_float(nil, float_opts)
       end, { noremap = true, silent = true })
 
-      -- Activate mason and mason-lspconfig.
-      require("mason").setup()
-
-      require("mason-lspconfig").setup({
-        -- Install servers by default.
-        -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
-        ensure_installed = {
-          "clangd",
-          "lua_ls",
-          "gopls",
-          "rust_analyzer",
-          "ts_ls",
-          "zls",
-        },
-        automatic_installation = true,
-      })
+      -- Install and enable language servers managed by Mason.
+      local servers = {
+        "clangd",
+        "lua_ls",
+        "gopls",
+        "rust_analyzer",
+        "ts_ls",
+        "zls",
+      }
 
       -- TODO: handle optional overrides for each language server.
       -- local servers = {
@@ -318,22 +311,18 @@ return {
       -- Set up completion capabilities for lspconfig.
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Set up installed servers by default, without having to specify
-      -- each one manually.
-      require("mason-lspconfig").setup_handlers({
-        -- The first entry (without a key) will be the default handler
-        -- and will be called for each installed server that doesn't
-        -- have a dedicated handler.
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-          })
-        end,
-        -- Optionally provide a dedicated handler for specific servers.
-        -- For example, a handler override for the `rust_analyzer`:
-        -- ["rust_analyzer"] = function ()
-        --     require("rust-tools").setup {}
-        -- end
+      -- Register per-server LSP configs with capabilities before Mason enables them.
+      for _, server in ipairs(servers) do
+        vim.lsp.config(server, {
+          capabilities = capabilities,
+        })
+      end
+
+      -- Activate mason and mason-lspconfig.
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = servers,
+        automatic_enable = true,
       })
 
       -- Show LSP status above the status line.
