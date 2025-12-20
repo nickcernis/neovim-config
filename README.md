@@ -62,6 +62,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
+- `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close buffer.
 - `<space> e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to
   edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
 - `<space> m` for mini file browser: create, edit, or move files by editing the

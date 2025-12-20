@@ -23,6 +23,12 @@ return {
       )
       vim.keymap.set(
         "n",
+        "<leader>ft",
+        fzf_lua.buffers,
+        { desc = "tabs", silent = true, noremap = true }
+      )
+      vim.keymap.set(
+        "n",
         "<leader>fy",
         fzf_lua.lsp_document_symbols,
         { desc = "symbols", silent = true, noremap = true }
