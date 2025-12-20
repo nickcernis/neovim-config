@@ -61,7 +61,8 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
-- `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close buffer.
+- `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close
+  buffer.
 - `<space> f y` for LSP symbols list.
 - `<space> f s` for git status, left to stage, right to unstage.
 - `<space> j` for word jump targets.
@@ -132,6 +133,9 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 `:Lazy` summons the plugin UI.
 
 ## Wishlist
+
+- Open current line in GitHub.
+- Fix file opening to not pop file picker and mini file.
 
 Things to explore:
 

@@ -3,6 +3,13 @@
 -- automatically when certain actions happen in Neovim.
 
 -- Group commands to clear all together and prevent re-definition if this file
+  -- <tab> to peek file, <enter> to open, <ctrl-v> to open in vertical split.
+  -- Add file (a)
+  -- Delete file (d)
+  -- Rename/move:
+  --   <ctrl-r> full path, allows moving
+  --   (r) full file name
+  --   (e) basename only (keep extension)
 -- is sourced twice in one Vim session. See :h autocmd-groups.
 vim.api.nvim_create_augroup("my_autocommands", { clear = true })
 
