@@ -8,7 +8,6 @@ of plugins supplemented with personal quirks.
 Assumes macOS and Neovim 0.9+.
 
 ```sh
-brew tap homebrew/cask-fonts
 brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit
 ```
 
@@ -57,27 +56,33 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 
 ## Bindings
 
-### General
+### Search, nav, file switching
 
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
 - `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close buffer.
+- `<space> f y` for LSP symbols list.
+- `<space> f s` for git status, left to stage, right to unstage.
+- `<space> j` for word jump targets.
+- `Ctrl-r` to find-replace across project (uses Grug Find and Replace).
+
+### File handling
+
 - `<space> e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to
   edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
 - `<space> m` for mini file browser: create, edit, or move files by editing the
   nav buffer then press = in normal mode to commit changes. Browse with hjkl.
-- `<space> f b` for buffer list, then Ctrl-x to close buffer.
-- `<space> f y` for LSP symbols list.
-- `<space> f s` for git status, left to stage, right to unstage.
-- `<space> j` for word jump targets.
+
 - `Ctrl-h` to go back in jump list (also reopens closed buffers).
 - `Ctrl-l` to go forward, :FzfLua jumps for a visual view.
+
+### Close, quit
+
 - `Ctrl-w` to close the buffer.
 - `Ctrl-q` to save all and quit.
-- `Ctrl-r` to find-replace across project (uses Grug Find and Replace).
 
-### Other bindings
+### Windows manipulation
 
 I use these in normal mode in place of the default Ctrl-w window commands, since
 I map Ctrl-w to close buffer:
@@ -90,7 +95,7 @@ I map Ctrl-w to close buffer:
 - `<space> w d|x` to close the window.
 - `<space> b d|x` to close the buffer.
 
-### Additional leader key bindings
+### Git
 
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.
@@ -130,28 +135,12 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 
 Things to explore:
 
-### Git
-
-- https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
-
-### Formatting
-
 - Format pasted code when it's pasted.
   https://github.com/ConradIrwin/vim-bracketed-paste
-
-### Misc
-
-- Hex editor backed by xxd: https://github.com/RaafatTurki/hex.nvim
+- https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
 - Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html
 - Check how file handling works if open buffers are deleted outside of nvim,
   such as when when switching git branch.
-- Explore writing modes, perhaps https://github.com/Pocco81/true-zen.nvim or
-  https://github.com/folke/zen-mode.nvim.
-- Look at neural and similar? https://github.com/dense-analysis/neural or
-  https://github.com/zbirenbaum/copilot.lua or
-  https://github.com/Bryley/neoai.nvim
-- Task runner for cargo run etc. with jump-to-line for compiler errors, via
-  quickfix lists or other.
 - Play with replacer: https://github.com/gabrielpoca/replacer.nvim
 - Try tabout: https://github.com/abecodes/tabout.nvim
 - Crates and package.json version number helpers:
