@@ -10,7 +10,7 @@ vim.g.maplocalleader = ","
 -- Experimental Neovim 0.8 feature to hide command line unless in use.
 -- Disabled for now because constant prompts to press Enter whenever
 -- output appears on the command line are annoying.
--- vim.o.cmdheight = 0
+vim.o.cmdheight = 0
 
 -- Don't soft wrap long lines.
 -- vim.wo.wrap = false
@@ -48,13 +48,13 @@ vim.opt.termguicolors = true
 -- Show whitespace at all times.
 -- I like this to reduce whitespace issues in projects
 -- without automated formatting and linting.
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↲")
-vim.opt.listchars:append("tab:→ ")
-vim.opt.listchars:append("extends:⟩")
-vim.opt.listchars:append("precedes:⟨")
-vim.opt.listchars:append("nbsp:␣")
+-- vim.opt.list = true
+-- vim.opt.listchars:append("space:⋅")
+-- vim.opt.listchars:append("eol:↲")
+-- vim.opt.listchars:append("tab:→ ")
+-- vim.opt.listchars:append("extends:⟩")
+-- vim.opt.listchars:append("precedes:⟨")
+-- vim.opt.listchars:append("nbsp:␣")
 
 
 -- Replace ~ with space on empty lines
