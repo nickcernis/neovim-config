@@ -40,7 +40,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close
   buffer.
 - `<space> f y` for LSP symbols list.
-- `<space> f s` for git status, left to stage, right to unstage.
+- `<space> g s` for git status, left to stage, right to unstage.
 - `<space> f c` for recent changes.
 - `<space> f j` for recent jumps.
 - `<space> f r` for recent file browser.

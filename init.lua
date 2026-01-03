@@ -219,7 +219,7 @@ require("lazy").setup({
       )
       vim.keymap.set(
         "n",
-        "<leader>fs",
+        "<leader>gs",
         fzf_lua.git_status,
         { desc = "git status", silent = true }
       )
