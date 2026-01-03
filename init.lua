@@ -163,7 +163,7 @@ require("lazy").setup({
         event_handlers = {
           {
             event = "git_status_changed",
-            handler = function(args)
+            handler = function()
               require("neo-tree.sources.manager").refresh("filesystem")
             end,
           },
@@ -725,7 +725,8 @@ end, { silent = true, desc = "open in github" })
 
 -- GitHub PR list with fzf
 set("n", "<leader>gp", function()
-  local cmd = [[gh pr list --limit 100 --state open --json number,isDraft,title,author --template '{{range .}}{{printf "\033[34m#%-6v\033[0m" .number}}  {{if .isDraft}}{{printf "\033[33m%-6s\033[0m" "DRAFT"}}{{else}}{{printf "\033[32m%-6s\033[0m" "OPEN"}}{{end}}  {{printf "\033[36m@%-20s\033[0m" .author.login}}  {{.title}}{{"\n"}}{{end}}']]
+  local cmd =
+    [[gh pr list --limit 100 --state open --json number,isDraft,title,author --template '{{range .}}{{printf "\033[34m#%-6v\033[0m" .number}}  {{if .isDraft}}{{printf "\033[33m%-6s\033[0m" "DRAFT"}}{{else}}{{printf "\033[32m%-6s\033[0m" "OPEN"}}{{end}}  {{printf "\033[36m@%-20s\033[0m" .author.login}}  {{.title}}{{"\n"}}{{end}}']]
   require("fzf-lua").fzf_exec(cmd, {
     fzf_opts = {
       ["--ansi"] = "",
@@ -805,7 +806,10 @@ set("n", "<leader>fz", function()
 
         -- Open new ghostty window with nvim in the selected directory
         vim.fn.system(
-          string.format("ghostty --working-directory=%s -e nvim &", vim.fn.shellescape(path))
+          string.format(
+            "ghostty --working-directory=%s -e nvim &",
+            vim.fn.shellescape(path)
+          )
         )
 
         print("Opening new window: " .. path)
