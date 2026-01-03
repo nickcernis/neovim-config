@@ -769,6 +769,9 @@ set("n", "<leader>fz", function()
 
   require("fzf-lua").fzf_exec(formatted_list, {
     prompt = "Projects> ",
+    fzf_opts = {
+      ["--header"] = "Enter=switch | Ctrl-o=new window",
+    },
     actions = {
       ["default"] = function(selected)
         if not selected or #selected == 0 then
@@ -792,6 +795,20 @@ set("n", "<leader>fz", function()
         vim.cmd("Neotree show")
 
         print("Switched to: " .. path)
+      end,
+      ["ctrl-o"] = function(selected)
+        if not selected or #selected == 0 then
+          return
+        end
+        -- Expand ~ back to home directory
+        local path = selected[1]:gsub("^~", home)
+
+        -- Open new ghostty window with nvim in the selected directory
+        vim.fn.system(
+          string.format("ghostty --working-directory=%s -e nvim &", vim.fn.shellescape(path))
+        )
+
+        print("Opening new window: " .. path)
       end,
     },
   })

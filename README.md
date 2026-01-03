@@ -51,6 +51,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `ds` or `dS` to delete until typed character.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
 - `<space> f u` for undo tree, enter to revert to selected change.
+- `<space> f z` for project switcher (requires zoxide, expects Ghostty to open in new window).
 
 ### File handling
 
