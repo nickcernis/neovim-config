@@ -154,6 +154,20 @@ require("lazy").setup({
     },
     lazy = false,
     config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          use_libuv_file_watcher = true,
+        },
+        event_handlers = {
+          {
+            event = "git_status_changed",
+            handler = function(args)
+              require("neo-tree.sources.manager").refresh("filesystem")
+            end,
+          },
+        },
+      })
+
       vim.keymap.set(
         "n",
         "<leader>e",
