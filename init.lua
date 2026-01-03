@@ -707,7 +707,7 @@ set("n", "<leader>go", function()
   local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
   local relative_path = file:sub(#git_root + 2)
   vim.fn.system(string.format("gh browse %s:%d", relative_path, line))
-end, { silent = true, desc = "open in github" })
+end, { silent = true, desc = "open line in GitHub" })
 
 set("v", "<leader>go", function()
   local file = vim.fn.expand("%:p")
@@ -721,7 +721,12 @@ set("v", "<leader>go", function()
   vim.fn.system(
     string.format("gh browse %s:%d-%d", relative_path, line_start, line_end)
   )
-end, { silent = true, desc = "open in github" })
+end, { silent = true, desc = "open line in GitHub" })
+
+-- Open repo in browser
+set("n", "<leader>gr", function()
+  vim.fn.system("gh repo view --web ")
+end, { silent = true, desc = "view repo in GitHub" })
 
 -- GitHub PR list with fzf
 set("n", "<leader>gp", function()
