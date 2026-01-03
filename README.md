@@ -83,6 +83,7 @@ I map Ctrl-w to close buffer:
 - `<space> g s` for status (uncommitted files).
 - `<space> g h` for hunks (good to navigate to recently changed location).
 - `<space> g o` to open current line or range in GitHub in your browser.
+- `<space> g p` for a list of GitHub PRs (uses GitHub CLI).
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.
 - `<space> h R` to reset the current buffer.

@@ -723,6 +723,38 @@ set("v", "<leader>go", function()
   )
 end, { silent = true, desc = "open in github" })
 
+-- GitHub PR list with fzf
+set("n", "<leader>gp", function()
+  local cmd = [[gh pr list --limit 100 --state open --json number,isDraft,title,author --template '{{range .}}{{printf "\033[34m#%-6v\033[0m" .number}}  {{if .isDraft}}{{printf "\033[33m%-6s\033[0m" "DRAFT"}}{{else}}{{printf "\033[32m%-6s\033[0m" "OPEN"}}{{end}}  {{printf "\033[36m@%-20s\033[0m" .author.login}}  {{.title}}{{"\n"}}{{end}}']]
+  require("fzf-lua").fzf_exec(cmd, {
+    fzf_opts = {
+      ["--ansi"] = "",
+      ["--header"] = "Enter=checkout | Ctrl-b=browser",
+    },
+    actions = {
+      ["default"] = function(selected)
+        if not selected or #selected == 0 then
+          return
+        end
+        local pr_number = selected[1]:match("^#(%d+)")
+        if pr_number then
+          vim.fn.system("gh pr checkout " .. pr_number)
+          vim.cmd("checktime")
+        end
+      end,
+      ["ctrl-b"] = function(selected)
+        if not selected or #selected == 0 then
+          return
+        end
+        local pr_number = selected[1]:match("^#(%d+)")
+        if pr_number then
+          vim.fn.system("gh pr view --web " .. pr_number)
+        end
+      end,
+    },
+  })
+end, { desc = "pull requests" })
+
 -- ============================================================================
 -- SECTION 5: AUTOCOMMANDS
 -- ============================================================================
