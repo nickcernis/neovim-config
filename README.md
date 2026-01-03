@@ -1,7 +1,6 @@
 # Neovim config
 
-My personal Neovim config, Lua-only, from scratch where "scratch" means a bunch
-of plugins supplemented with personal quirks.
+My Neovim config, one file under 1000 lines.
 
 ## Setup
 
@@ -9,13 +8,6 @@ Assumes macOS and Neovim 0.9+.
 
 ```sh
 brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit
-```
-
-You'll also need node, golang, zig and zstd to auto-install language servers
-(zstd is used to compress the Zig language server):
-
-```sh
-brew install node golang zig zstd
 ```
 
 Then:
@@ -36,24 +28,6 @@ bat --list-themes | grep tokyo # should output "tokyonight_night"
 echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 ```
 
-## Layout
-
-```
-├── README.md                 -> You are here.
-├── init.lua                  -> ASCII art and includes.
-├── lazy-lock.json            -> Plugin lockfile updated by Lazy.
-└── lua
-    └── config
-        ├── autocommands.lua  -> Auto-strip whitespace, file picker on load.
-        ├── keymaps.lua       -> Do things when you press things.
-        ├── lazy.lua          -> Bootstrap the Lazy plugin manager.
-        ├── options.lua       -> General settings.
-        └── plugins           -> Plugin configs, loaded automatically by Lazy.
-            ├── [plugin1].lua
-            ├── [plugin2].lua
-            └── [...].lua
-```
-
 ## Bindings
 
 ### Search, nav, file switching
@@ -66,15 +40,12 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f y` for LSP symbols list.
 - `<space> f s` for git status, left to stage, right to unstage.
 - `<space> j` for word jump targets.
-- `Ctrl-r` to find-replace across project (uses Grug Find and Replace).
+- `<space> r` to find-replace across project (uses Grug Find and Replace).
 
 ### File handling
 
-- `<space> e` to toggle the file tree. (Then `a` to create, `e`|`r`|`Ctrl-r` to
-  edit, `d` to delete, `?` for help, `Ctrl-e` to close.)
-- `<space> m` for mini file browser: create, edit, or move files by editing the
-  nav buffer then press = in normal mode to commit changes. Browse with hjkl.
-
+- `<space> e` to toggle the file tree ('explore'). (Then `a` to create, `r` to
+  rename, `d` to delete, `?` for help, `<space> e` to close.)
 - `Ctrl-h` to go back in jump list (also reopens closed buffers).
 - `Ctrl-l` to go forward, :FzfLua jumps for a visual view.
 
@@ -126,7 +97,7 @@ I map Ctrl-w to close buffer:
 
 Managed with [Lazy](https://github.com/folke/lazy.nvim), which gives us a
 lockfile, automatic caching and bytecode compilation, a smart upgrade/install UI
-with load time reports, and easy plugin config split across files.
+with load time reports.
 
 Configs in `./lua/config/plugins/` are automatically loaded.
 
@@ -135,7 +106,6 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 ## Wishlist
 
 - Open current line in GitHub.
-- Fix file opening to not pop file picker and mini file.
 
 Things to explore:
 
