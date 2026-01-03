@@ -296,30 +296,15 @@ require("lazy").setup({
           },
         },
       })
-      vim.keymap.set(
-        { "n", "x", "o" },
-        "<leader>j",
-        function()
-          require("flash").jump()
-        end,
-        { desc = "flash jump" }
-      )
-      vim.keymap.set(
-        { "n", "x", "o" },
-        "s",
-        function()
-          require("flash").jump()
-        end,
-        { desc = "flash jump" }
-      )
-      vim.keymap.set(
-        { "n", "x", "o" },
-        "S",
-        function()
-          require("flash").treesitter()
-        end,
-        { desc = "flash treesitter" }
-      )
+      vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()
+        require("flash").jump()
+      end, { desc = "flash jump" })
+      vim.keymap.set({ "n", "x", "o" }, "s", function()
+        require("flash").jump()
+      end, { desc = "flash jump" })
+      vim.keymap.set({ "n", "x", "o" }, "S", function()
+        require("flash").treesitter()
+      end, { desc = "flash treesitter" })
     end,
   },
 
