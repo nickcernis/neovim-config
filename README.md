@@ -59,7 +59,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `Ctrl-w` to close the buffer.
 - `Ctrl-q` to save all and quit.
 
-### Windows manipulation
+### Window manipulation
 
 I use these in normal mode in place of the default Ctrl-w window commands, since
 I map Ctrl-w to close buffer:
@@ -74,6 +74,9 @@ I map Ctrl-w to close buffer:
 
 ### Git
 
+- `<space> g c` for commit list.
+- `<space> g s` for status (uncommitted files).
+- `<space> g h` for hunks.
 - `<space> g o` to open current line or range in GitHub in your browser.
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.

@@ -195,12 +195,6 @@ require("lazy").setup({
       )
       vim.keymap.set(
         "n",
-        "<leader>ft",
-        fzf_lua.buffers,
-        { desc = "tabs", silent = true }
-      )
-      vim.keymap.set(
-        "n",
         "<leader>fy",
         fzf_lua.lsp_document_symbols,
         { desc = "symbols", silent = true }
@@ -260,6 +254,18 @@ require("lazy").setup({
         "<leader>fu",
         fzf_lua.undotree,
         { desc = "undo tree", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>gc",
+        fzf_lua.git_commits,
+        { desc = "git commits", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>gh",
+        fzf_lua.git_hunks,
+        { desc = "git hunks", silent = true }
       )
     end,
   },
