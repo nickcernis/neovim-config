@@ -496,14 +496,6 @@ require("lazy").setup({
     },
     keys = {
       {
-        "<leader>f",
-        function()
-          require("conform").format({ async = true })
-        end,
-        mode = "",
-        desc = "Format buffer",
-      },
-      {
         "<c-;>",
         function()
           require("conform").format({ async = true })
@@ -644,7 +636,9 @@ set("v", "<leader>go", function()
   end
   local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
   local relative_path = file:sub(#git_root + 2)
-  vim.fn.system(string.format("gh browse %s:%d-%d", relative_path, line_start, line_end))
+  vim.fn.system(
+    string.format("gh browse %s:%d-%d", relative_path, line_start, line_end)
+  )
 end, { silent = true, desc = "open in github" })
 
 -- ============================================================================
