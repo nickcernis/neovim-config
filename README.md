@@ -4,7 +4,7 @@ My Neovim config, one file under 1000 lines.
 
 ## Setup
 
-Assumes macOS and Neovim 0.9+.
+Assumes macOS and Neovim 0.11+.
 
 ```sh
 brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit
@@ -45,7 +45,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f <space>` for last fuzzy search with entered text retained.
 - `<space> j` for word jump targets.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
-- `<space> f u` for undo tree.
+- `<space> f u` for undo tree, enter to revert to selected change.
 
 ### File handling
 
@@ -89,8 +89,8 @@ I map Ctrl-w to close buffer:
 - `gr` to show references and :q to exit.
 - `F2` to rename current cursor position.
 - `F4` for code actions on the current cursor position.
-- `Ctrl-;` to format the current buffer or selection if the LSP server provides
-  formatting support.
+- `Ctrl-;` to format the current buffer or selection. (Formatters configured in
+'conform' block in init.lua.) 
 
 ## Commands
 
@@ -102,8 +102,7 @@ I map Ctrl-w to close buffer:
 ## Plugins
 
 Managed with [Lazy](https://github.com/folke/lazy.nvim), which gives us a
-lockfile, automatic caching and bytecode compilation, a smart upgrade/install UI
-with load time reports.
+lockfile, automatic caching and bytecode compilation, and a UI with load times.
 
 `:Lazy` summons the plugin UI.
 
@@ -114,13 +113,9 @@ Things to explore:
 - Format pasted code when it's pasted.
   https://github.com/ConradIrwin/vim-bracketed-paste
 - https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
-- Disable or adjust swap file handling? https://neovim.io/doc/user/reco.html
+- Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html 
 - Check how file handling works if open buffers are deleted outside of nvim,
   such as when when switching git branch.
-- Play with replacer: https://github.com/gabrielpoca/replacer.nvim
-- Try tabout: https://github.com/abecodes/tabout.nvim
-- Crates and package.json version number helpers:
-  https://github.com/Saecki/crates.nvim
 
 ## Other notes
 
@@ -141,12 +136,6 @@ terminal tab.
 
 - Plugin ideas: https://neovimcraft.com/
 - More plugin ideas: https://github.com/rockerBOO/awesome-neovim
-- New stuff every week: https://this-week-in-neovim.org/
-- The semi-official starter config. A little scrappy but worth reading:
-  https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
-- Opinionated starter distribution using custom plugins:
-  https://nvchad.com/Features
-- Less opinionated starter distributions using off-the-shelf plugins:
-  https://astronvim.github.io/ and https://www.lunarvim.org/
-- An overview of Neovim's LSP configuration spaghetti:
-  https://roobert.github.io/2022/12/03/Extending-Neovim/
+- The semi-official starter config: https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+- Opinionated starter distribution using custom plugins: https://nvchad.com/Features
+- Less opinionated starter distributions using off-the-shelf plugins: https://astronvim.github.io/ and https://www.lunarvim.org/
