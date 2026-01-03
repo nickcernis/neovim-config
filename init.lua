@@ -137,17 +137,9 @@ require("lazy").setup({
 
   -- Status line
   {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "echasnovski/mini.statusline",
     config = function()
-      require("lualine").setup({
-        options = {
-          icons_enabled = false,
-          theme = "tokyonight",
-          component_separators = "|",
-          section_separators = "",
-        },
-      })
+      require("mini.statusline").setup()
     end,
   },
 
