@@ -26,6 +26,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- Hide command line unless in use.
+vim.o.cmdheight = 0
+
 -- Permanently show sign column to prevent layout shift.
 vim.wo.signcolumn = "yes"
 
