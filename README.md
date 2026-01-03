@@ -41,6 +41,8 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f s` for git status, left to stage, right to unstage.
 - `<space> f c` for recent changes.
 - `<space> f j` for recent jumps.
+- `<space> f r` for recent file browser.
+- `<space> f <space>` for last fuzzy search with entered text retained.
 - `<space> j` for word jump targets.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
 

@@ -225,6 +225,20 @@ require("lazy").setup({
         fzf_lua.changes,
         { desc = "changes", silent = true }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>fr",
+        function()
+          fzf_lua.oldfiles({ cwd_only = true })
+        end,
+        { desc = "recent files", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>f<leader>",
+        fzf_lua.resume,
+        { desc = "resume", silent = true }
+      )
     end,
   },
 
