@@ -79,8 +79,9 @@ I map Ctrl-w to close buffer:
 ### Git
 
 - `<space> g c` for commit list.
+- `<space> g b` for branches, type new branch name and control-a to create from current.
 - `<space> g s` for status (uncommitted files).
-- `<space> g h` for hunks.
+- `<space> g h` for hunks (good to navigate to recently changed location).
 - `<space> g o` to open current line or range in GitHub in your browser.
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.

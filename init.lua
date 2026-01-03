@@ -262,6 +262,12 @@ require("lazy").setup({
         fzf_lua.git_hunks,
         { desc = "git hunks", silent = true }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>gb",
+        fzf_lua.git_branches,
+        { desc = "git branches", silent = true }
+      )
     end,
   },
 
