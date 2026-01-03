@@ -69,6 +69,7 @@ I map Ctrl-w to close buffer:
 
 ### Git
 
+- `<space> g o` to open current line or range in GitHub in your browser.
 - `<space> h p` to preview a git hunk.
 - `<space> h r` to reset a git hunk.
 - `<space> h R` to reset the current buffer.
@@ -105,8 +106,6 @@ Configs in `./lua/config/plugins/` are automatically loaded.
 
 ## Wishlist
 
-- Open current line in GitHub.
-
 Things to explore:
 
 - Format pasted code when it's pasted.
@@ -119,7 +118,6 @@ Things to explore:
 - Try tabout: https://github.com/abecodes/tabout.nvim
 - Crates and package.json version number helpers:
   https://github.com/Saecki/crates.nvim
-- Explore https://github.com/roobert/search-replace.nvim.
 
 ## Other notes
 

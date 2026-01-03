@@ -307,7 +307,7 @@ require("lazy").setup({
     end,
   },
 
-  -- Text wrapping
+  -- Text wrapping, auto soft-wraps Markdown.
   {
     "andrewferrier/wrapping.nvim",
     config = function()
@@ -531,6 +531,7 @@ require("lazy").setup({
       require("which-key").add({
         { "<leader>b", group = "buffer" },
         { "<leader>f", group = "fuzzy" },
+        { "<leader>g", group = "git" },
         { "<leader>h", group = "hunk" },
         { "<leader>q", group = "quit" },
         { "<leader>w", group = "window" },
@@ -624,6 +625,27 @@ set("n", "<c-j>", "<C-i>", { desc = "forward" })
 -- Quit and save all
 set("n", "<leader>qq", "<cmd>wqall<cr>", { silent = true, desc = "quit all" })
 set("n", "<c-q>", "<cmd>wqall<cr>", { silent = true, desc = "quit all" })
+
+-- Open current line in GitHub
+set("n", "<leader>go", function()
+  local file = vim.fn.expand("%:p")
+  local line = vim.fn.line(".")
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  local relative_path = file:sub(#git_root + 2)
+  vim.fn.system(string.format("gh browse %s:%d", relative_path, line))
+end, { silent = true, desc = "open in github" })
+
+set("v", "<leader>go", function()
+  local file = vim.fn.expand("%:p")
+  local line_start = vim.fn.line("v")
+  local line_end = vim.fn.line(".")
+  if line_start > line_end then
+    line_start, line_end = line_end, line_start
+  end
+  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+  local relative_path = file:sub(#git_root + 2)
+  vim.fn.system(string.format("gh browse %s:%d-%d", relative_path, line_start, line_end))
+end, { silent = true, desc = "open in github" })
 
 -- ============================================================================
 -- SECTION 5: AUTOCOMMANDS
