@@ -39,6 +39,8 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
   buffer.
 - `<space> f y` for LSP symbols list.
 - `<space> f s` for git status, left to stage, right to unstage.
+- `<space> f c` for recent changes.
+- `<space> f j` for recent jumps.
 - `<space> j` for word jump targets.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
 
@@ -111,7 +113,7 @@ Things to explore:
 - Format pasted code when it's pasted.
   https://github.com/ConradIrwin/vim-bracketed-paste
 - https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
-- Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html
+- Disable or adjust swap file handling? https://neovim.io/doc/user/reco.html
 - Check how file handling works if open buffers are deleted outside of nvim,
   such as when when switching git branch.
 - Play with replacer: https://github.com/gabrielpoca/replacer.nvim

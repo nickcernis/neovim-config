@@ -213,6 +213,18 @@ require("lazy").setup({
         fzf_lua.git_status,
         { desc = "git status", silent = true }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>fj",
+        fzf_lua.jumps,
+        { desc = "jumps", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>fc",
+        fzf_lua.changes,
+        { desc = "changes", silent = true }
+      )
     end,
   },
 
