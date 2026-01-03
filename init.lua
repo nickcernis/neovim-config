@@ -725,6 +725,7 @@ set("n", "<leader>gp", function()
   local cmd =
     [[gh pr list --limit 100 --state open --json number,isDraft,title,author --template '{{range .}}{{printf "\033[34m#%-6v\033[0m" .number}}  {{if .isDraft}}{{printf "\033[33m%-6s\033[0m" "DRAFT"}}{{else}}{{printf "\033[32m%-6s\033[0m" "OPEN"}}{{end}}  {{printf "\033[36m@%-20s\033[0m" .author.login}}  {{.title}}{{"\n"}}{{end}}']]
   require("fzf-lua").fzf_exec(cmd, {
+    prompt = "PRs> ",
     fzf_opts = {
       ["--ansi"] = "",
       ["--header"] = "Enter=checkout | Ctrl-b=browser",
