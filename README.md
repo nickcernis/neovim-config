@@ -7,7 +7,7 @@ My Neovim config, one file under 1000 lines.
 Assumes macOS and Neovim 0.11+.
 
 ```sh
-brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit
+brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit zoxide
 ```
 
 Then:
@@ -35,6 +35,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
+- `<space> f z` for project switcher (uses zoxide).
 - `<space><tab>` for last buffer. (Repeat to alternate between two files.)
 - `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close
   buffer.
