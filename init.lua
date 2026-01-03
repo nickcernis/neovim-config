@@ -646,6 +646,19 @@ set(
 set("n", "<leader>bd", ":bd<cr>", { silent = true, desc = "close buffer" })
 set("n", "<leader>bx", ":bd<cr>", { silent = true, desc = "close buffer" })
 
+-- Copy file paths
+set("n", "<leader>yr", function()
+  local path = vim.fn.expand("%:.")
+  vim.fn.setreg("+", path)
+  print("Copied: " .. path)
+end, { silent = true, desc = "yank relative path" })
+
+set("n", "<leader>ya", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  print("Copied: " .. path)
+end, { silent = true, desc = "yank absolute path" })
+
 -- Move text up and down in visual mode
 set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")

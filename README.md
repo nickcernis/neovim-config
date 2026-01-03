@@ -114,8 +114,6 @@ Things to explore:
   https://github.com/ConradIrwin/vim-bracketed-paste
 - https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
 - Disable or adjust swap file handling? https://neovim.io/doc/user/recover.html 
-- Check how file handling works if open buffers are deleted outside of nvim,
-  such as when when switching git branch.
 
 ## Other notes
 
