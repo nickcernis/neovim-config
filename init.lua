@@ -235,14 +235,9 @@ require("lazy").setup({
         fzf_lua.changes,
         { desc = "changes", silent = true }
       )
-      vim.keymap.set(
-        "n",
-        "<leader>fr",
-        function()
-          fzf_lua.oldfiles({ cwd_only = true })
-        end,
-        { desc = "recent files", silent = true }
-      )
+      vim.keymap.set("n", "<leader>fr", function()
+        fzf_lua.oldfiles({ cwd_only = true })
+      end, { desc = "recent files", silent = true })
       vim.keymap.set(
         "n",
         "<leader>f<leader>",
@@ -284,17 +279,40 @@ require("lazy").setup({
     end,
   },
 
-  -- Word jumping
+  -- Enhanced navigation
   {
-    "phaazon/hop.nvim",
-    branch = "v2",
+    "folke/flash.nvim",
     config = function()
-      require("hop").setup()
+      require("flash").setup({
+        modes = {
+          char = {
+            jump_labels = true,
+          },
+        },
+      })
       vim.keymap.set(
-        "n",
+        { "n", "x", "o" },
         "<leader>j",
-        "<cmd>HopWordMW<cr>",
-        { silent = true, desc = "jump to" }
+        function()
+          require("flash").jump()
+        end,
+        { desc = "flash jump" }
+      )
+      vim.keymap.set(
+        { "n", "x", "o" },
+        "s",
+        function()
+          require("flash").jump()
+        end,
+        { desc = "flash jump" }
+      )
+      vim.keymap.set(
+        { "n", "x", "o" },
+        "S",
+        function()
+          require("flash").treesitter()
+        end,
+        { desc = "flash treesitter" }
       )
     end,
   },
@@ -651,6 +669,12 @@ set(
 -- Buffer commands
 set("n", "<leader>bd", ":bd<cr>", { silent = true, desc = "close buffer" })
 set("n", "<leader>bx", ":bd<cr>", { silent = true, desc = "close buffer" })
+set(
+  "n",
+  "<leader><tab>",
+  "<cmd>b#<cr>",
+  { silent = true, desc = "alternate buffer" }
+)
 
 -- Copy file paths
 set("n", "<leader>yr", function()

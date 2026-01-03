@@ -35,6 +35,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f p` to find files in current project.
 - `<space> f f` to find lines in current file (similar to swiper in Emacs).
 - `<space> f g` to search text in current project (backed by ripgrep).
+- `<space><tab>` for last buffer. (Repeat to alternate between two files.)
 - `<space> f b` or `<space> f t` for buffer/'tab' list, then Ctrl-x to close
   buffer.
 - `<space> f y` for LSP symbols list.
@@ -43,7 +44,10 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f j` for recent jumps.
 - `<space> f r` for recent file browser.
 - `<space> f <space>` for last fuzzy search with entered text retained.
-- `<space> j` for word jump targets.
+- `<space> j` to jump by typed word.
+- `s` for flash jump by character (letter targets after first typed character).
+- `S` for flash jump based on treesitter.
+- `ds` or `dS` to delete until typed character.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
 - `<space> f u` for undo tree, enter to revert to selected change.
 
