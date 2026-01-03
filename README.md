@@ -45,6 +45,7 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 - `<space> f <space>` for last fuzzy search with entered text retained.
 - `<space> j` for word jump targets.
 - `<space> r` to find-replace across project (uses Grug Find and Replace).
+- `<space> f u` for undo tree.
 
 ### File handling
 
@@ -103,8 +104,6 @@ I map Ctrl-w to close buffer:
 Managed with [Lazy](https://github.com/folke/lazy.nvim), which gives us a
 lockfile, automatic caching and bytecode compilation, a smart upgrade/install UI
 with load time reports.
-
-Configs in `./lua/config/plugins/` are automatically loaded.
 
 `:Lazy` summons the plugin UI.
 

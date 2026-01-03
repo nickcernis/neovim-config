@@ -239,6 +239,12 @@ require("lazy").setup({
         fzf_lua.resume,
         { desc = "resume", silent = true }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>fu",
+        fzf_lua.undotree,
+        { desc = "undo tree", silent = true }
+      )
     end,
   },
 
