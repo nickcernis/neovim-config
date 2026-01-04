@@ -167,6 +167,18 @@ require("lazy").setup({
               require("neo-tree.sources.manager").refresh("filesystem")
             end,
           },
+          {
+            event = "neo_tree_window_after_open",
+            handler = function()
+              vim.cmd("wincmd =")
+            end,
+          },
+          {
+            event = "neo_tree_window_after_close",
+            handler = function()
+              vim.cmd("wincmd =")
+            end,
+          },
         },
       })
 
