@@ -601,6 +601,7 @@ require("lazy").setup({
         { "<leader>g", group = "git" },
         { "<leader>h", group = "hunk" },
         { "<leader>q", group = "quit" },
+        { "<leader>y", group = "yank paths" },
         { "<leader>w", group = "window" },
       })
     end,
