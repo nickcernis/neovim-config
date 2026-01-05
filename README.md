@@ -6,8 +6,24 @@ My Neovim config, one file under 1000 lines.
 
 Assumes macOS and Neovim 0.11+.
 
+Install dependencies:
+
 ```sh
 brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit zoxide
+```
+
+Optionally backup existing neovim state:
+
+```
+mv ~/.config/nvim ~/.config/nvim-backup
+mv ~/.local/share/nvim ~/.local/share/nvim-backup
+mv ~/.cache/nvim ~/.cache/nvim-backup
+```
+
+Or just remove it:
+
+```
+rm -rf ~/.config/nvim ~/.local/share/nvim ~/.cache/nvim
 ```
 
 Then:
