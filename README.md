@@ -136,6 +136,7 @@ lockfile, automatic caching and bytecode compilation, and a UI with load times.
 
 Things to explore:
 
+- Maybe try https://github.com/coder/claudecode.nvim
 - Format pasted code when it's pasted.
   https://github.com/ConradIrwin/vim-bracketed-paste
 - https://github.com/wfxr/forgit with https://github.com/ray-x/forgit.nvim.
