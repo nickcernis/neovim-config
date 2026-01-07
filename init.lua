@@ -526,6 +526,7 @@ require("lazy").setup({
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
           vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
           vim.keymap.set({ "n", "x" }, "<F4>", vim.lsp.buf.code_action, opts)
         end,
