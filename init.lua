@@ -220,7 +220,14 @@ require("lazy").setup({
       vim.keymap.set(
         "n",
         "<leader>fg",
-        fzf_lua.live_grep,
+        function()
+          fzf_lua.live_grep({
+            winopts = {
+              height = 0.98,
+              width = 0.98,
+            }
+          })
+        end,
         { desc = "grep", silent = true }
       )
       vim.keymap.set(
