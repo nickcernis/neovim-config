@@ -555,8 +555,8 @@ require("lazy").setup({
       formatters_by_ft = {
         c = { "clang-format" },
         cpp = { "clang-format" },
-        javascript = { "prettierd", "eslint_d", stop_after_first = true },
-        typescript = { "prettierd", "eslint_d", stop_after_first = true },
+        javascript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
+        typescript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
         lua = { "stylua" },
         markdown = { "deno_fmt" },
         php = { "phpcbf" },
