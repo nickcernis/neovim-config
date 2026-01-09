@@ -563,6 +563,7 @@ require("lazy").setup({
       formatters_by_ft = {
         c = { "clang-format" },
         cpp = { "clang-format" },
+        json = { "biome-check" },
         javascript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
         javascriptreact = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
         typescript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
