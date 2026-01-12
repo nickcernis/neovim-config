@@ -160,6 +160,12 @@ require("lazy").setup({
         filesystem = {
           use_libuv_file_watcher = true,
           follow_current_file = { enabled = true },
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+            hide_gitignored = true,
+            hide_by_name = {},
+          },
         },
         event_handlers = {
           {
