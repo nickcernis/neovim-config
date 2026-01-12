@@ -72,8 +72,8 @@ echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 
 - `<space> e` to toggle the file tree ('explore'). (Then `a` to create, `r` to
   rename, `d` to delete, `?` for help, `<space> e` to close.)
-- `Ctrl-h` to go back in jump list (also reopens closed buffers).
-- `Ctrl-l` to go forward, :FzfLua jumps for a visual view.
+- `Ctrl-k` to go back in jump list (also reopens closed buffers).
+- `Ctrl-j` to go forward, :FzfLua jumps for a visual view.
 
 ### Close, quit
 
