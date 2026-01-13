@@ -85,6 +85,16 @@ vim.opt.splitright = true
 -- Hide the winbar.
 vim.opt.winbar = nil
 
+-- Define how whitespace characters appear when shown.
+vim.opt.listchars = {
+  tab = "→ ",
+  space = "·",
+  trail = "•",
+  extends = "⟩",
+  precedes = "⟨",
+  nbsp = "␣",
+}
+
 -- ============================================================================
 -- SECTION 2: LAZY.NVIM BOOTSTRAP
 -- ============================================================================
@@ -619,6 +629,7 @@ require("lazy").setup({
         { "<leader>g", group = "git" },
         { "<leader>h", group = "hunk" },
         { "<leader>q", group = "quit" },
+        { "<leader>t", group = "toggle" },
         { "<leader>y", group = "yank paths" },
         { "<leader>w", group = "window" },
       })
@@ -714,6 +725,11 @@ end, { silent = true, desc = "yank absolute path" })
 -- Move text up and down in visual mode
 set("v", "J", ":m '>+1<CR>gv=gv")
 set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Toggle whitespace visibility
+set("n", "<leader>tw", function()
+  vim.opt.list = not vim.opt.list:get()
+end, { silent = true, desc = "toggle whitespace" })
 
 -- Restore gx functionality (required because netrw is disabled)
 set(
