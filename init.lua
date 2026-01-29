@@ -511,9 +511,9 @@ require("lazy").setup({
       "hrsh7th/cmp-path",
     },
     config = function()
-      -- Only keep servers for C, Go, TypeScript
       local servers = {
         "clangd",
+        "cssls",
         "gopls",
         "ts_ls",
       }
@@ -582,7 +582,10 @@ require("lazy").setup({
       formatters_by_ft = {
         c = { "clang-format" },
         cpp = { "clang-format" },
+        css = { "biome-check" },
         json = { "biome-check" },
+        -- Until biome supports scss: https://github.com/biomejs/biome/issues/8732
+        scss = { "prettierd" },
         javascript = {
           "biome-check",
           "prettierd",
