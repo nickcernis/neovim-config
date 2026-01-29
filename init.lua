@@ -307,6 +307,18 @@ require("lazy").setup({
         fzf_lua.git_branches,
         { desc = "git branches", silent = true }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>ft",
+        fzf_lua.diagnostics_document,
+        { desc = "diagnostics", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>fT",
+        fzf_lua.diagnostics_workspace,
+        { desc = "diagnostics (all)", silent = true }
+      )
     end,
   },
 
