@@ -214,7 +214,17 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local fzf_lua = require("fzf-lua")
-      fzf_lua.setup({ "fzf-native" })
+      fzf_lua.setup({
+        "fzf-native",
+        winopts = {
+          height = 0.98,
+          width = 0.98,
+          preview = {
+            layout = "vertical",
+            vertical = "up:75%",
+          },
+        },
+      })
 
       vim.keymap.set(
         "n",
@@ -237,14 +247,7 @@ require("lazy").setup({
       vim.keymap.set(
         "n",
         "<leader>fg",
-        function()
-          fzf_lua.live_grep({
-            winopts = {
-              height = 0.98,
-              width = 0.98,
-            }
-          })
-        end,
+        fzf_lua.live_grep,
         { desc = "grep", silent = true }
       )
       vim.keymap.set(
@@ -580,10 +583,30 @@ require("lazy").setup({
         c = { "clang-format" },
         cpp = { "clang-format" },
         json = { "biome-check" },
-        javascript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
-        javascriptreact = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
-        typescript = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
-        typescriptreact = { "biome-check", "prettierd", "eslint_d", stop_after_first = true },
+        javascript = {
+          "biome-check",
+          "prettierd",
+          "eslint_d",
+          stop_after_first = true,
+        },
+        javascriptreact = {
+          "biome-check",
+          "prettierd",
+          "eslint_d",
+          stop_after_first = true,
+        },
+        typescript = {
+          "biome-check",
+          "prettierd",
+          "eslint_d",
+          stop_after_first = true,
+        },
+        typescriptreact = {
+          "biome-check",
+          "prettierd",
+          "eslint_d",
+          stop_after_first = true,
+        },
         lua = { "stylua" },
         markdown = { "deno_fmt" },
         php = { "phpcbf" },
