@@ -44,6 +44,24 @@ bat --list-themes | grep tokyo # should output "tokyonight_night"
 echo '--theme="tokyonight_night"' > "$(bat --config-dir)/config"
 ```
 
+Note: The upstream theme has a very dark `lineHighlight` color (`#00000030`) that makes
+the highlighted line nearly invisible in fzf-lua previews. To fix this, edit
+`~/.config/bat/themes/tokyonight_night.tmTheme` and change line 38 from:
+
+```xml
+<key>lineHighlight</key>
+<string>#00000030</string>
+```
+
+to:
+
+```xml
+<key>lineHighlight</key>
+<string>#283457</string>
+```
+
+Then rebuild the cache with `bat cache --build`.
+
 ## Bindings
 
 ### Search, nav, file switching
