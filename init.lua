@@ -379,45 +379,21 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })
-    end,
+    lazy = false,
+    build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "c",
-          "css",
-          "go",
-          "html",
-          "javascript",
-          "json",
-          "lua",
-          "make",
-          "markdown",
-          "php",
-          "phpdoc",
-          "query",
-          "rust",
-          "scss",
-          "toml",
-          "tsx",
-          "typescript",
-          "vim",
-          "vimdoc",
-          "yaml",
-          "zig",
-        },
-        highlight = { enable = true },
-        indent = { enable = true, disable = { "python" } },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<c-space>",
-            node_incremental = "<c-space>",
-            scope_incremental = "<c-s>",
-            node_decremental = "<c-backspace>",
-          },
-        },
+      require("nvim-treesitter").install({
+        "c", "css", "go", "html", "javascript", "json", "lua", "make",
+        "markdown", "php", "phpdoc", "query", "rust", "scss", "toml",
+        "tsx", "typescript", "vim", "vimdoc", "yaml", "zig",
+      })
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function()
+          pcall(vim.treesitter.start)
+          if vim.bo.filetype ~= "python" then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
       })
     end,
   },

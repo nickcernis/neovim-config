@@ -4,12 +4,12 @@ My Neovim config, one file under 1000 lines.
 
 ## Setup
 
-Assumes macOS and Neovim 0.11+.
+Assumes macOS and Neovim 0.12+.
 
 Install dependencies:
 
 ```sh
-brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit zoxide
+brew install neovim ripgrep fzf bat git-delta gnu-sed fd rg lazygit zoxide tree-sitter tree-sitter-cli
 ```
 
 Optionally backup existing neovim state:
@@ -139,6 +139,7 @@ I map Ctrl-w to close buffer:
 ## Commands
 
 - `:Lazy` to update/install plugins.
+- `:TSUpdate` to update treesitter parsers after upgrading nvim-treesitter.
 - `:FzfLua` for all FzfLua pickers.
 - `:Mason` to manage LSP servers.
 - `:LspInfo` is sometimes useful, as is `:LspInstall`.
